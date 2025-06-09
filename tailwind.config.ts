@@ -6,6 +6,14 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [
+    "bg-quest-1",
+    "bg-quest-2",
+    "bg-quest-3",
+    "bg-quest-4",
+    "bg-quest-5",
+    "bg-quest-6",
+  ],
   theme: {
     extend: {
       backgroundImage: {

@@ -1,23 +1,20 @@
 import React from "react";
 import portfolioData from "@/data/portfolio.json";
-import { Code2, ExternalLink } from "lucide-react";
+import { Code2, ArrowUpRight } from "lucide-react";
 
 export default function QuestsSection() {
   const { quests } = portfolioData;
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case "Completed":
-        return "bg-green-100 text-green-800";
-      case "In Progress":
-        return "bg-blue-100 text-blue-800";
-      case "In Development":
-        return "bg-yellow-100 text-yellow-800";
-      case "Planning":
-        return "bg-purple-100 text-purple-800";
-      default:
-        return "bg-gray-100 text-gray-800";
-    }
+  const getTechTagColor = (tech: string, index: number) => {
+    const colors = [
+      "bg-blue-100 text-blue-800 border border-blue-200", // Light blue
+      "bg-yellow-100 text-yellow-800 border border-yellow-200", // Light yellow
+      "bg-orange-100 text-orange-800 border border-orange-200", // Light orange
+      "bg-red-100 text-red-800 border border-red-200", // Light red
+      "bg-green-100 text-green-800 border border-green-200", // Light green
+      "bg-purple-100 text-purple-800 border border-purple-200", // Light purple
+    ];
+    return colors[index % colors.length];
   };
 
   return (
@@ -34,63 +31,45 @@ export default function QuestsSection() {
           {quests.map((quest) => (
             <div
               key={quest.id}
-              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
+              className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
             >
               {/* Header */}
-              <div className="p-4 border-b border-gray-100">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-gray-500 uppercase tracking-wide">
-                    {quest.category}
-                  </span>
-                  <span
-                    className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(
-                      quest.status
-                    )}`}
-                  >
-                    {quest.status}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">
-                  {quest.title}
-                </h3>
+              <div className="p-4 flex items-center justify-between">
+                <span className="text-sm font-medium text-gray-500 lowercase tracking-wide">
+                  [{quest.category.toLowerCase().replace(/\s+/g, "")}]
+                </span>
+                <ArrowUpRight className="w-4 h-4 text-gray-400" />
               </div>
 
-              {/* Image */}
-              <div className="relative h-48 overflow-hidden">
+              {/* Large Image Area */}
+              <div className="relative h-48 mx-4 mb-4 rounded-lg overflow-hidden bg-gray-100">
                 <img
                   src={quest.image}
                   alt={quest.title}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
 
-              {/* Content */}
-              <div className="p-4">
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  {quest.description}
-                </p>
-              </div>
+              {/* Bottom Content */}
+              <div className="p-4 pt-0">
+                {/* Title */}
+                <h3 className="text-base font-semibold text-gray-900 mb-3 leading-tight">
+                  {quest.title}
+                </h3>
 
-              {/* Footer with Tags */}
-              <div className="px-4 pb-4">
-                <div className="flex flex-wrap gap-2">
-                  {quest.technologies.map((tech, index) => (
+                {/* Technology Tags */}
+                <div className="flex flex-wrap gap-1.5">
+                  {quest.technologies.slice(0, 4).map((tech, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium hover:bg-gray-200 transition-colors"
+                      className={`px-2 py-1 rounded-md text-xs font-medium ${getTechTagColor(
+                        tech,
+                        index
+                      )}`}
                     >
                       {tech}
                     </span>
                   ))}
-                </div>
-
-                {/* Optional: Add a "View Project" button */}
-                <div className="mt-4 pt-4 border-t border-gray-100">
-                  <button className="flex items-center gap-2 text-purple-600 hover:text-purple-700 text-sm font-medium transition-colors">
-                    <ExternalLink className="w-4 h-4" />
-                    View Project
-                  </button>
                 </div>
               </div>
             </div>
