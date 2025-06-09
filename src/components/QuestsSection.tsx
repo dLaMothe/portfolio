@@ -3,9 +3,11 @@
 import React from "react";
 import portfolioData from "@/data/portfolio.json";
 import { Code2, ArrowRight, Clock, Users, Wrench } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function QuestsSection() {
   const { quests } = portfolioData;
+  const router = useRouter();
 
   const getSkillTagColor = (skill: string, index: number) => {
     const colors = [
@@ -22,8 +24,7 @@ export default function QuestsSection() {
   };
 
   const handleQuestClick = (questId: number) => {
-    // TODO: Navigate to individual project page
-    console.log(`Navigate to quest ${questId} details page`);
+    router.push(`/quest/${questId}`);
   };
 
   return (

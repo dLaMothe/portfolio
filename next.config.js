@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
   trailingSlash: true,
   images: {
     unoptimized: true,
@@ -8,5 +7,10 @@ const nextConfig = {
   basePath: process.env.NODE_ENV === "production" ? "/portfolio" : "",
   assetPrefix: process.env.NODE_ENV === "production" ? "/portfolio" : "",
 };
+
+// Only use static export in production
+if (process.env.NODE_ENV === "production") {
+  nextConfig.output = "export";
+}
 
 module.exports = nextConfig;
