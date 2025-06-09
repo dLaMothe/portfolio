@@ -37,8 +37,8 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl">
-        <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+      <div className="relative z-10 px-6 max-w-4xl ml-auto mr-8">
+        <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg text-left">
           <h1 className="text-lg md:text-2xl font-bold text-gray-800 mb-6">
             {hero.title}
           </h1>
