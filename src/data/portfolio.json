@@ -1,0 +1,180 @@
+{
+  "hero": {
+    "title": "HEY THERE!",
+    "description": "I'm passionate about creating digital experiences that make a difference. Welcome to my portfolio where creativity meets functionality.",
+    "sparkles": [
+      { "top": "20%", "left": "15%", "symbol": "✨" },
+      { "top": "30%", "right": "20%", "symbol": "⭐" },
+      { "top": "60%", "left": "10%", "symbol": "✦" },
+      { "top": "70%", "right": "15%", "symbol": "◊" }
+    ]
+  },
+  "values": [
+    {
+      "title": "Why May You Ask?",
+      "description": "Every project tells a story, and I believe in crafting narratives that resonate with users and create meaningful connections."
+    },
+    {
+      "title": "Building User Stories",
+      "description": "I focus on understanding user needs and translating them into intuitive, accessible, and delightful digital experiences."
+    },
+    {
+      "title": "My Philosophy",
+      "description": "Design with purpose, code with passion, and always keep the human element at the center of every decision."
+    }
+  ],
+  "quests": [
+    {
+      "id": 1,
+      "title": "E-Commerce Platform",
+      "category": "Full Stack Development",
+      "description": "Modern shopping experience with seamless checkout flow, inventory management, and real-time order tracking.",
+      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=200&fit=crop&auto=format",
+      "technologies": ["React", "Node.js", "Stripe API", "MongoDB"],
+      "status": "Completed",
+      "gradient": "quest-1"
+    },
+    {
+      "id": 2,
+      "title": "Task Management App",
+      "category": "Collaboration Tools",
+      "description": "Collaborative workspace for team productivity with real-time updates, file sharing, and progress tracking.",
+      "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=200&fit=crop&auto=format",
+      "technologies": ["Vue.js", "Firebase", "Vuetify", "PWA"],
+      "status": "In Progress",
+      "gradient": "quest-2"
+    },
+    {
+      "id": 3,
+      "title": "Weather Dashboard",
+      "category": "Data Visualization",
+      "description": "Real-time weather data with beautiful visualizations, forecasts, and interactive maps for multiple locations.",
+      "image": "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=200&fit=crop&auto=format",
+      "technologies": ["React", "D3.js", "Weather API", "Charts.js"],
+      "status": "Completed",
+      "gradient": "quest-3"
+    },
+    {
+      "id": 4,
+      "title": "Portfolio Website",
+      "category": "Personal Branding",
+      "description": "Creative showcase of work and achievements with modern design, smooth animations, and responsive layout.",
+      "image": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=200&fit=crop&auto=format",
+      "technologies": ["Next.js", "Tailwind", "Framer Motion", "TypeScript"],
+      "status": "Completed",
+      "gradient": "quest-4"
+    },
+    {
+      "id": 5,
+      "title": "Learning Platform",
+      "category": "Education Technology",
+      "description": "Interactive educational content delivery system with progress tracking, quizzes, and community features.",
+      "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=200&fit=crop&auto=format",
+      "technologies": ["React", "Node.js", "MongoDB", "Socket.io"],
+      "status": "In Development",
+      "gradient": "quest-5"
+    },
+    {
+      "id": 6,
+      "title": "Mobile Recipe App",
+      "category": "Mobile Development",
+      "description": "Discover and save your favorite recipes with ingredient lists, cooking timers, and meal planning features.",
+      "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=200&fit=crop&auto=format",
+      "technologies": ["React Native", "Firebase", "Redux", "Expo"],
+      "status": "Planning",
+      "gradient": "quest-6"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Frontend",
+      "items": ["React", "Vue.js", "TypeScript", "Next.js"],
+      "color": "skill-blue"
+    },
+    {
+      "category": "Backend",
+      "items": ["Node.js", "Python", "PostgreSQL", "MongoDB"],
+      "color": "skill-green"
+    },
+    {
+      "category": "Design",
+      "items": ["Figma", "Adobe XD", "Sketch", "Photoshop"],
+      "color": "skill-pink"
+    },
+    {
+      "category": "Tools",
+      "items": ["Git", "Docker", "AWS", "Jenkins"],
+      "color": "skill-purple"
+    },
+    {
+      "category": "Mobile",
+      "items": ["React Native", "Flutter", "iOS", "Android"],
+      "color": "skill-orange"
+    },
+    {
+      "category": "Testing",
+      "items": ["Jest", "Cypress", "Storybook", "Playwright"],
+      "color": "skill-yellow"
+    }
+  ],
+  "library": [
+    {
+      "title": "Clean Code",
+      "author": "Robert C. Martin",
+      "description": "Essential principles for writing maintainable code"
+    },
+    {
+      "title": "Design Systems",
+      "author": "Alla Kholmatova",
+      "description": "Building consistent user interfaces at scale"
+    },
+    {
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "description": "Improving personal and professional productivity"
+    },
+    {
+      "title": "The Pragmatic Programmer",
+      "author": "Hunt & Thomas",
+      "description": "Timeless lessons for effective software development"
+    },
+    {
+      "title": "Don't Make Me Think",
+      "author": "Steve Krug",
+      "description": "Common sense approach to web usability"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "AWS Certified Developer",
+      "issuer": "Amazon Web Services",
+      "date": "2023",
+      "description": "Cloud development and deployment expertise"
+    },
+    {
+      "title": "React Developer Certification",
+      "issuer": "Facebook",
+      "date": "2023",
+      "description": "Advanced React patterns and best practices"
+    },
+    {
+      "title": "UX Design Specialization",
+      "issuer": "Google",
+      "date": "2022",
+      "description": "User-centered design methodology"
+    },
+    {
+      "title": "Best Innovation Award",
+      "issuer": "Tech Conference 2023",
+      "date": "2023",
+      "description": "Recognition for outstanding project innovation"
+    }
+  ],
+  "contact": {
+    "title": "LET'S EMBARK ON A QUEST TOGETHER",
+    "description": "Ready to bring your ideas to life? Let's connect and create something amazing together.",
+    "email": "hello@example.com",
+    "github": "yourusername",
+    "linkedin": "yourprofile"
+  }
+}
