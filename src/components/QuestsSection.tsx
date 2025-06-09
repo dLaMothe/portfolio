@@ -1,22 +1,29 @@
+"use client";
+
 import React from "react";
 import portfolioData from "@/data/portfolio.json";
-import { Code2, ArrowRight } from "lucide-react";
+import { Code2, ArrowRight, Clock, Users, Wrench } from "lucide-react";
 
 export default function QuestsSection() {
   const { quests } = portfolioData;
 
-  const getTechTagColor = (tech: string, index: number) => {
+  const getSkillTagColor = (skill: string, index: number) => {
     const colors = [
       "bg-blue-500 text-white", // Bold blue
-      "bg-yellow-400 text-black", // Bright yellow
-      "bg-orange-500 text-white", // Vibrant orange
-      "bg-red-500 text-white", // Bold red
       "bg-green-500 text-white", // Bright green
       "bg-purple-500 text-white", // Bold purple
+      "bg-orange-500 text-white", // Vibrant orange
       "bg-pink-500 text-white", // Hot pink
       "bg-cyan-500 text-white", // Bright cyan
+      "bg-yellow-500 text-black", // Bright yellow
+      "bg-red-500 text-white", // Bold red
     ];
     return colors[index % colors.length];
+  };
+
+  const handleQuestClick = (questId: number) => {
+    // TODO: Navigate to individual project page
+    console.log(`Navigate to quest ${questId} details page`);
   };
 
   return (
@@ -33,45 +40,82 @@ export default function QuestsSection() {
           {quests.map((quest) => (
             <div
               key={quest.id}
-              className="bg-white rounded-lg border-2 border-black overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-white rounded-lg border-2 border-black overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+              onClick={() => handleQuestClick(quest.id)}
             >
               {/* Header */}
               <div className="p-3 flex items-center justify-between bg-gray-100">
                 <span className="text-xs font-bold text-black lowercase tracking-wide">
-                  [{quest.category.toLowerCase().replace(/\s+/g, "")}]
+                  [quest-{quest.id.toString().padStart(2, "0")}]
                 </span>
                 <ArrowRight className="w-4 h-4 text-black" />
               </div>
 
-              {/* Large Image Area */}
-              <div className="relative h-48 bg-gray-400 overflow-hidden">
-                <img
-                  src={quest.image}
-                  alt={quest.title}
-                  className="w-full h-full object-cover object-center"
-                />
+              {/* Large Gradient Area */}
+              <div
+                className={`relative h-48 ${quest.gradient} bg-gradient-to-br from-purple-400 via-pink-500 to-red-500 overflow-hidden`}
+              >
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center text-white">
+                    <h3 className="text-lg font-bold mb-2 px-4 leading-tight">
+                      {quest.title}
+                    </h3>
+                    <div className="flex items-center justify-center gap-2 text-sm opacity-90">
+                      <Clock className="w-4 h-4" />
+                      <span>{quest.duration}</span>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Bottom Content */}
-              <div className="p-3 bg-gray-100">
-                {/* Title */}
-                <h3 className="text-sm font-bold text-black mb-3 leading-tight">
-                  {quest.title}
-                </h3>
+              <div className="p-4 bg-gray-100 space-y-3">
+                {/* Team Info */}
+                <div className="flex items-start gap-2">
+                  <Users className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" />
+                  <span className="text-xs text-gray-700 leading-tight">
+                    {quest.team}
+                  </span>
+                </div>
 
-                {/* Technology Tags */}
-                <div className="flex flex-wrap gap-1">
-                  {quest.technologies.map((tech, index) => (
-                    <span
-                      key={index}
-                      className={`px-2 py-1 text-xs font-bold border-2 border-black ${getTechTagColor(
-                        tech,
-                        index
-                      )}`}
-                    >
-                      {tech}
+                {/* Applied Skills */}
+                <div>
+                  <div className="flex items-center gap-1 mb-2">
+                    <span className="text-xs font-semibold text-gray-800 uppercase tracking-wide">
+                      Applied Skills
                     </span>
-                  ))}
+                  </div>
+                  <div className="flex flex-wrap gap-1">
+                    {quest.appliedSkills.slice(0, 3).map((skill, index) => (
+                      <span
+                        key={index}
+                        className={`px-2 py-1 text-xs font-bold border-2 border-black ${getSkillTagColor(
+                          skill,
+                          index
+                        )}`}
+                      >
+                        {skill.split(" | ")[0]} {/* Show shortened version */}
+                      </span>
+                    ))}
+                    {quest.appliedSkills.length > 3 && (
+                      <span className="px-2 py-1 text-xs font-bold border-2 border-black bg-gray-500 text-white">
+                        +{quest.appliedSkills.length - 3}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                {/* Tools Preview */}
+                <div className="flex items-center gap-2 text-xs text-gray-600">
+                  <Wrench className="w-3 h-3" />
+                  <span>
+                    {quest.tools
+                      .slice(0, 2)
+                      .map((tool) => tool.replace(" ❤️", ""))
+                      .join(", ")}
+                    {quest.tools.length > 2 &&
+                      ` +${quest.tools.length - 2} more`}
+                  </span>
                 </div>
               </div>
             </div>

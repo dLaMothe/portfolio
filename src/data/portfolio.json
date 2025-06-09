@@ -26,62 +26,133 @@
   "quests": [
     {
       "id": 1,
-      "title": "E-Commerce Platform",
-      "category": "Full Stack Development",
-      "description": "Modern shopping experience with seamless checkout flow, inventory management, and real-time order tracking.",
-      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=200&fit=crop&auto=format",
-      "technologies": ["React", "Node.js", "Stripe API", "MongoDB"],
-      "status": "Completed",
+      "title": "A design system for all teams",
+      "appliedSkills": [
+        "UX | User Experience Design",
+        "User Research",
+        "UX Writing"
+      ],
+      "duration": "6 Month",
+      "team": "5 Designers, 1 Product Owner, 2 Developers",
+      "tools": [
+        "Benchmark",
+        "User Interviews",
+        "Sketch",
+        "Affinity Mapping",
+        "Abstract"
+      ],
       "gradient": "quest-1"
     },
     {
       "id": 2,
-      "title": "Task Management App",
-      "category": "Collaboration Tools",
-      "description": "Collaborative workspace for team productivity with real-time updates, file sharing, and progress tracking.",
-      "image": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=400&h=200&fit=crop&auto=format",
-      "technologies": ["Vue.js", "Firebase", "Vuetify", "PWA"],
-      "status": "In Progress",
+      "title": "Easy ordering for every diet",
+      "appliedSkills": [
+        "User Research",
+        "UX | User Experience Design",
+        "UX Writing",
+        "Workshop Facilitation"
+      ],
+      "duration": "1 Month",
+      "team": "3 Designers, 1 CEO, 1 Product Owner, 1 Developer",
+      "tools": [
+        "Expert Interviews ❤️",
+        "HMW",
+        "Desk Research",
+        "Lightning Demos",
+        "User Testing",
+        "Figma ❤️"
+      ],
       "gradient": "quest-2"
     },
     {
       "id": 3,
-      "title": "Weather Dashboard",
-      "category": "Data Visualization",
-      "description": "Real-time weather data with beautiful visualizations, forecasts, and interactive maps for multiple locations.",
-      "image": "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=200&fit=crop&auto=format",
-      "technologies": ["React", "D3.js", "Weather API", "Charts.js"],
-      "status": "Completed",
+      "title": "Effortless onboarding with a personalised reward",
+      "appliedSkills": [
+        "Prototyping",
+        "User Research",
+        "UX | User Experience Design",
+        "UX Writing",
+        "Workshop Facilitation"
+      ],
+      "duration": "4 Month",
+      "team": "2 Designers, 1 Product Owner, 6 Developers, 1 Marketing Consultant, 1 Content Consultant",
+      "tools": [
+        "Expert Interviews ❤️",
+        "Miro ❤️",
+        "Figma ❤️",
+        "rapid Usertests",
+        "User Interviews",
+        "Wireframing",
+        "Benchmark",
+        "Wizard of Oz",
+        "Desk Research",
+        "User Testing",
+        "Behavioural Psychology",
+        "Opportunity decision tree ❤️",
+        "Journey Mapping"
+      ],
       "gradient": "quest-3"
     },
     {
       "id": 4,
-      "title": "Portfolio Website",
-      "category": "Personal Branding",
-      "description": "Creative showcase of work and achievements with modern design, smooth animations, and responsive layout.",
-      "image": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=200&fit=crop&auto=format",
-      "technologies": ["Next.js", "Tailwind", "Framer Motion", "TypeScript"],
-      "status": "Completed",
+      "title": "Custom lists for self organisation",
+      "appliedSkills": [
+        "UX | User Experience Design",
+        "User Research",
+        "Prototyping",
+        "Workshop Facilitation"
+      ],
+      "duration": "2 Month",
+      "team": "2 Designers, 1 Product Owner, 6 Developers, 1 Marketing Consultant, 1 Content Consultant",
+      "tools": [
+        "Figma ❤️",
+        "User Testing",
+        "Desk Research",
+        "Behavioural Psychology",
+        "Opportunity decision tree ❤️",
+        "JTBD",
+        "Wireframing",
+        "Benchmark",
+        "User Interviews",
+        "rapid Usertests",
+        "Hotjar ❤️",
+        "Miro ❤️"
+      ],
       "gradient": "quest-4"
     },
     {
       "id": 5,
-      "title": "Learning Platform",
-      "category": "Education Technology",
-      "description": "Interactive educational content delivery system with progress tracking, quizzes, and community features.",
-      "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=200&fit=crop&auto=format",
-      "technologies": ["React", "Node.js", "MongoDB", "Socket.io"],
-      "status": "In Development",
+      "title": "A filter for every yogi",
+      "appliedSkills": [
+        "UX | User Experience Design",
+        "User Research",
+        "Prototyping",
+        "Workshop Facilitation"
+      ],
+      "duration": "4 Month",
+      "team": "1 Product Owner, 2 Designers (UI & UX), 6 Developer, 1 Content consultant",
+      "tools": [
+        "Optimal Workshop ❤️",
+        "rapid Usertests",
+        "Figma ❤️",
+        "Miro ❤️",
+        "Card Sorting ❤️",
+        "Tree Testing ❤️",
+        "Expert Interviews ❤️"
+      ],
       "gradient": "quest-5"
     },
     {
       "id": 6,
-      "title": "Mobile Recipe App",
-      "category": "Mobile Development",
-      "description": "Discover and save your favorite recipes with ingredient lists, cooking timers, and meal planning features.",
-      "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=200&fit=crop&auto=format",
-      "technologies": ["React Native", "Firebase", "Redux", "Expo"],
-      "status": "Planning",
+      "title": "OOUXing my Portfolio",
+      "appliedSkills": [
+        "OOUX | Object Oriented User Experience",
+        "UX | User Experience Design",
+        "UI | User Interface Design"
+      ],
+      "duration": "1 Month",
+      "team": "Just me",
+      "tools": ["Miro ❤️", "Notion ❤️", "ORCA ❤️", "Figma ❤️"],
       "gradient": "quest-6"
     }
   ],
@@ -105,7 +176,7 @@
         "Miro ❤️",
         "Figma ❤️"
       ],
-      "skillLevel": "▰▰▰▰▰▰▰▰▱▱",
+      "skillLevel": "▰▰▰▰▰▰▰▱▱▱",
       "quests": [
         "OOUXing my Portfolio",
         "A design system for all teams",
