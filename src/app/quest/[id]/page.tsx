@@ -1,13 +1,28 @@
-"use client";
-
 import React from "react";
-import { useParams, useRouter } from "next/navigation";
-import { ArrowLeft, Clock, Users, Target, Lightbulb } from "lucide-react";
+import { Clock, Users, Target, Lightbulb } from "lucide-react";
+import { notFound } from "next/navigation";
+import BackButton from "./BackButton";
 
-export default function QuestDetailPage() {
-  const params = useParams();
-  const router = useRouter();
-  const questId = params?.id as string;
+// Generate static params for all quest IDs
+export async function generateStaticParams() {
+  return [
+    { id: "1" },
+    { id: "2" },
+    { id: "3" },
+    { id: "4" },
+    { id: "5" },
+    { id: "6" },
+  ];
+}
+
+interface QuestPageProps {
+  params: {
+    id: string;
+  };
+}
+
+export default function QuestDetailPage({ params }: QuestPageProps) {
+  const questId = params.id;
 
   // Quest 1: A design system for all teams
   if (questId === "1") {
@@ -23,20 +38,7 @@ export default function QuestDetailPage() {
         >
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
           <div className="absolute top-6 left-6">
-            <button
-              onClick={() => {
-                // Check if there's a previous page in history, otherwise go to home
-                if (window.history.length > 1) {
-                  router.back();
-                } else {
-                  router.push("/");
-                }
-              }}
-              className="flex items-center gap-2 px-4 py-2 bg-white bg-opacity-90 rounded-full hover:bg-opacity-100 transition-all"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span className="text-sm font-medium">Back to Portfolio</span>
-            </button>
+            <BackButton />
           </div>
         </div>
 
@@ -313,20 +315,7 @@ export default function QuestDetailPage() {
         >
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
           <div className="absolute top-6 left-6">
-            <button
-              onClick={() => {
-                // Check if there's a previous page in history, otherwise go to home
-                if (window.history.length > 1) {
-                  router.back();
-                } else {
-                  router.push("/");
-                }
-              }}
-              className="flex items-center gap-2 px-4 py-2 bg-white bg-opacity-90 rounded-full hover:bg-opacity-100 transition-all"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span className="text-sm font-medium">Back to Portfolio</span>
-            </button>
+            <BackButton />
           </div>
         </div>
 
@@ -576,20 +565,7 @@ export default function QuestDetailPage() {
         >
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
           <div className="absolute top-6 left-6">
-            <button
-              onClick={() => {
-                // Check if there's a previous page in history, otherwise go to home
-                if (window.history.length > 1) {
-                  router.back();
-                } else {
-                  router.push("/");
-                }
-              }}
-              className="flex items-center gap-2 px-4 py-2 bg-white bg-opacity-90 rounded-full hover:bg-opacity-100 transition-all"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span className="text-sm font-medium">Back to Portfolio</span>
-            </button>
+            <BackButton />
           </div>
         </div>
 
@@ -883,20 +859,7 @@ export default function QuestDetailPage() {
         >
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
           <div className="absolute top-6 left-6">
-            <button
-              onClick={() => {
-                // Check if there's a previous page in history, otherwise go to home
-                if (window.history.length > 1) {
-                  router.back();
-                } else {
-                  router.push("/");
-                }
-              }}
-              className="flex items-center gap-2 px-4 py-2 bg-white bg-opacity-90 rounded-full hover:bg-opacity-100 transition-all"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span className="text-sm font-medium">Back to Portfolio</span>
-            </button>
+            <BackButton />
           </div>
         </div>
 
@@ -1256,20 +1219,7 @@ export default function QuestDetailPage() {
         >
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
           <div className="absolute top-6 left-6">
-            <button
-              onClick={() => {
-                // Check if there's a previous page in history, otherwise go to home
-                if (window.history.length > 1) {
-                  router.back();
-                } else {
-                  router.push("/");
-                }
-              }}
-              className="flex items-center gap-2 px-4 py-2 bg-white bg-opacity-90 rounded-full hover:bg-opacity-100 transition-all"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span className="text-sm font-medium">Back to Portfolio</span>
-            </button>
+            <BackButton />
           </div>
         </div>
 
@@ -1530,22 +1480,8 @@ export default function QuestDetailPage() {
 
   // For now, we'll show the Effortless Onboarding project for quest ID 3
   if (questId !== "3") {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Quest Details Coming Soon</h1>
-          <p className="text-gray-600 mb-4">
-            This project case study will be available soon.
-          </p>
-          <button
-            onClick={() => router.push("/")}
-            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-          >
-            Back to Home
-          </button>
-        </div>
-      </div>
-    );
+    // Use notFound() for invalid quest IDs to show 404 page
+    notFound();
   }
 
   return (
@@ -1560,20 +1496,7 @@ export default function QuestDetailPage() {
       >
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         <div className="absolute top-6 left-6">
-          <button
-            onClick={() => {
-              // Check if there's a previous page in history, otherwise go to home
-              if (window.history.length > 1) {
-                router.back();
-              } else {
-                router.push("/");
-              }
-            }}
-            className="flex items-center gap-2 px-4 py-2 bg-white bg-opacity-90 rounded-full hover:bg-opacity-100 transition-all"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span className="text-sm font-medium">Back to Portfolio</span>
-          </button>
+          <BackButton />
         </div>
       </div>
 
