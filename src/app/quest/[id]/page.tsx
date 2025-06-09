@@ -1205,12 +1205,12 @@ export default function QuestDetailPage() {
             </h2>
             <div className="space-y-6">
               <blockquote className="bg-blue-50 border-l-4 border-blue-400 p-6 italic">
-                "Suuuper app but the filter/search function should be improved.
-                EDIT: THERE WAS JUST A NEW FILTER. NICE!!"
+                &quot;Suuuper app but the filter/search function should be
+                improved. EDIT: THERE WAS JUST A NEW FILTER. NICE!!&quot;
               </blockquote>
               <blockquote className="bg-green-50 border-l-4 border-green-400 p-6 italic">
-                "...Your improved filter in the app is great, by the way. It
-                helps me find what I need even faster."
+                &quot;...Your improved filter in the app is great, by the way.
+                It helps me find what I need even faster.&quot;
               </blockquote>
             </div>
           </div>
@@ -1349,9 +1349,9 @@ export default function QuestDetailPage() {
             <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded">
               <p className="text-sm text-amber-800">
                 This Case Study contains a lot of OOUX jargon which might be
-                difficult to understand for some. However, I don't want to
-                explain the process here so if you'd like to learn more about
-                OOUX feel free to reach out or go to{" "}
+                difficult to understand for some. However, I don&apos;t want to
+                explain the process here so if you&apos;d like to learn more
+                about OOUX feel free to reach out or go to{" "}
                 <a
                   href="https://www.ooux.com/"
                   className="underline hover:text-amber-900"
@@ -1375,9 +1375,9 @@ export default function QuestDetailPage() {
             <div className="bg-green-50 p-6 rounded-lg">
               <h3 className="text-lg font-bold text-gray-800 mb-4">Goal</h3>
               <p className="text-gray-700 text-sm leading-relaxed">
-                Use the opportunity of the task to "OOUX your own portfolio"
-                during the OOUX Foundations course to build a new portfolio with
-                tools I have better excess to.
+                Use the opportunity of the task to &quot;OOUX your own
+                portfolio&quot; during the OOUX Foundations course to build a
+                new portfolio with tools I have better excess to.
               </p>
             </div>
             <div className="bg-blue-50 p-6 rounded-lg">
@@ -1386,7 +1386,8 @@ export default function QuestDetailPage() {
               </h3>
               <p className="text-gray-700 text-sm leading-relaxed">
                 Keep to the deadline for the concept and then actually finish it
-                afterwards (it's surprisingly hard when it's "personal" work).
+                afterwards (it&apos;s surprisingly hard when it&apos;s
+                &quot;personal&quot; work).
               </p>
             </div>
           </div>
