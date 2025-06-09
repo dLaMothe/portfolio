@@ -15,26 +15,40 @@ export default function InventorySection() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {inventory.map((book, index) => (
-            <div
-              key={index}
-              className="bg-gray-100 rounded-lg p-3 h-64 flex flex-col justify-between hover:shadow-lg transition-shadow"
-            >
-              <div>
-                <div className="bg-gray-300 rounded h-32 mb-3 flex items-center justify-center">
-                  <BookOpen className="w-6 h-6 text-gray-500" />
+        <div className="overflow-hidden">
+          <div className="flex gap-6 overflow-x-scroll py-4 -mb-6 pb-10">
+            {inventory.map((book, index) => (
+              <div
+                key={index}
+                className="bg-gray-100 rounded-lg p-4 w-72 flex-shrink-0 h-64 flex flex-col justify-between hover:shadow-xl transition-all hover:scale-105 border-2 border-transparent hover:border-blue-300"
+              >
+                <div>
+                  <div className="rounded h-28 mb-3 overflow-hidden bg-gray-200 shadow-inner">
+                    {book.image ? (
+                      <img
+                        src={book.image}
+                        alt={book.title}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-300 to-gray-400">
+                        <BookOpen className="w-6 h-6 text-gray-600" />
+                      </div>
+                    )}
+                  </div>
+                  <h3 className="font-semibold text-xs mb-2 text-gray-800 leading-tight h-8 overflow-hidden">
+                    {book.title}
+                  </h3>
+                  <p className="text-xs text-gray-600 mb-2 font-medium">
+                    by {book.author}
+                  </p>
                 </div>
-                <h3 className="font-semibold text-xs mb-2 text-gray-800">
-                  {book.title}
-                </h3>
-                <p className="text-xs text-gray-600 mb-2">by {book.author}</p>
+                <p className="text-xs text-gray-500 leading-tight overflow-hidden h-12">
+                  {book.description}
+                </p>
               </div>
-              <p className="text-xs text-gray-500 leading-tight">
-                {book.description}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
