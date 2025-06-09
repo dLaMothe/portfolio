@@ -11,16 +11,16 @@
   },
   "values": [
     {
-      "title": "Why May You Ask?",
-      "description": "Every project tells a story, and I believe in crafting narratives that resonate with users and create meaningful connections."
+      "title": "Learning from Users",
+      "description": "Research is a focal point and listening to actual users is the best time investment."
     },
     {
-      "title": "Building User Stories",
-      "description": "I focus on understanding user needs and translating them into intuitive, accessible, and delightful digital experiences."
+      "title": "Learning from Peers",
+      "description": "Collaborating with my team or other experts is important to me. No one knows everything."
     },
     {
-      "title": "My Philosophy",
-      "description": "Design with purpose, code with passion, and always keep the human element at the center of every decision."
+      "title": "Learning from Media",
+      "description": "Books and podcasts inspire and excite me to trying out new things (please talk to me about OOUX)."
     }
   ],
   "quests": [
@@ -129,31 +129,121 @@
       "icon": "testing"
     }
   ],
-  "library": [
+  "inventory": [
     {
-      "title": "Clean Code",
-      "author": "Robert C. Martin",
-      "description": "Essential principles for writing maintainable code"
+      "title": "The Tipping Point",
+      "author": "Malcolm Gladwell",
+      "description": "8/10 - Easy read, real interesting case studies, applicable to personal and professional life."
     },
     {
-      "title": "Design Systems",
-      "author": "Alla Kholmatova",
-      "description": "Building consistent user interfaces at scale"
+      "title": "Flow",
+      "author": "Mihaly Csikszentmihalyi",
+      "description": "7/10 - The middle part is a bit drawn out but the triggerd reflection and application on ones personal life I find quite valuable."
     },
     {
-      "title": "Atomic Habits",
-      "author": "James Clear",
-      "description": "Improving personal and professional productivity"
+      "title": "Thinking Fast and Slow",
+      "author": "Daniel Kahneman",
+      "description": "8/10 - A personal accomplishment but not a book for everyone. Powerful fundamentals but you gotta put in work to learn how to apply them best."
     },
     {
-      "title": "The Pragmatic Programmer",
-      "author": "Hunt & Thomas",
-      "description": "Timeless lessons for effective software development"
+      "title": "Predictably Irrational",
+      "author": "Dan Ariely",
+      "description": "10/10 - Very inspiring and interesting. Stuff makes ya think man."
     },
     {
-      "title": "Don't Make Me Think",
-      "author": "Steve Krug",
-      "description": "Common sense approach to web usability"
+      "title": "Influence",
+      "author": "Robert Cialdini",
+      "description": "100/10 - A chonker full of valuable insights and case studies. Easy to read, it just takes a while."
+    },
+    {
+      "title": "Design Sprint",
+      "author": "Jake Knapp",
+      "description": "8/10 - Quick read and inspiring. Maybe a tad idealistic but the methods are grate and can be used on there own or when remixing the process."
+    },
+    {
+      "title": "How to Win Friends & Influence People",
+      "author": "Dale Carnegie",
+      "description": "6/10 - Helpful tactics if you remember to apply them and chose the right moments."
+    },
+    {
+      "title": "Creativity Inc.",
+      "author": "Edwin Catmull & Amy Wallace",
+      "description": "8/10 - Inspiring and makes you smile :)"
+    },
+    {
+      "title": "Actionable Gamification",
+      "author": "Yu-Kai Chou",
+      "description": "10/10 - Very actionable and covers a lot of ground which makes it valuable for most projects and situations."
+    },
+    {
+      "title": "The Theory of Fun",
+      "author": "Raph Koster",
+      "description": "10/10 - Short but packed with very good points about what fun is and why learning rocks."
+    },
+    {
+      "title": "The Paradox of Choice",
+      "author": "Barry Schwartz",
+      "description": "9/10 Very interesting, inspiring and entertaining"
+    },
+    {
+      "title": "The Design of Everyday Things",
+      "author": "Don Norman",
+      "description": "10/10 - Valuable fundamentals every designer should learn about."
+    },
+    {
+      "title": "Incognito",
+      "author": "David Eagleman",
+      "description": "7/10 Not the most useful to UX but loads of examples about how our brain works that are very interesting to read"
+    },
+    {
+      "title": "Continuous Discovery Habits",
+      "author": "Teresa Torres",
+      "description": "10/10 - Very realistic, helpful and actionable examples about how to do product development in a structured, experiment based way while keeping the user is the center"
+    },
+    {
+      "title": "Jobs to Be Done",
+      "author": "Stephen Wunker, Jessica Wattman & David Farber",
+      "description": "5/10 - Nice to read a bit more about the theory but the TED talk already said it all."
+    },
+    {
+      "title": "Inspired",
+      "author": "Marty Cagan",
+      "description": "4/10 - Not a bad book (easy and inspiring read) but at this point I feel like I already heard most of what this book is talking about."
+    },
+    {
+      "title": "Choice Hacking",
+      "author": "Jennifer Clinehens",
+      "description": "7/10 - Pop-Science like. Not that deep but enjoyable, easy read and a good entry point for behavioural psychology."
+    },
+    {
+      "title": "UX for Lean Startups",
+      "author": "Laura Klein",
+      "description": "7/10 - Super easy read with something for everyone. Not too deep, as its mostly case studies and short but good for an inspiration burst."
+    },
+    {
+      "title": "This is Service Design Thinking",
+      "author": "Marc Stickdorn",
+      "description": "7/10 I think the first half could have been more condensed but it's a grate way of thinking with good methods to reference"
+    },
+    {
+      "title": "Universal Methods of Design",
+      "author": "Bella Martin & Bruce Hanington",
+      "description": "10/10 Really good to have on hand to know how to do a method but also to inspire which methods could be helpful in a given situation"
+    },
+    {
+      "title": "OOUX Podcast",
+      "author": "Sophia Prater",
+      "description": "10/10 - Recommending it all the time. Its educational every time and makes me want to go to the gym."
+    },
+    {
+      "title": "Growth.Design Newsletter",
+      "author": "Dan Benoni & Louis-Xavier Lavallee",
+      "description": "10/10 - The only newsletter I ALWAYS read."
+    },
+    {
+      "title": "Nudge",
+      "author": "Richard H. Thaler",
+      "description": "Currently in progress"
     }
   ],
   "achievements": [

@@ -3,7 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import ValuesSection from "@/components/ValuesSection";
 import QuestsSection from "@/components/QuestsSection";
 import SkillsSection from "@/components/SkillsSection";
-import LibrarySection from "@/components/LibrarySection";
+import InventorySection from "@/components/LibrarySection";
 import AchievementsSection from "@/components/AchievementsSection";
 import ContactSection from "@/components/ContactSection";
 
@@ -14,7 +14,7 @@ export default function Home() {
       <ValuesSection />
       <QuestsSection />
       <SkillsSection />
-      <LibrarySection />
+      <InventorySection />
       <AchievementsSection />
       <ContactSection />
     </main>

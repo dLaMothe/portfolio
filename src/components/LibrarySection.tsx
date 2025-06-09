@@ -2,8 +2,8 @@ import React from "react";
 import portfolioData from "@/data/portfolio.json";
 import { BookOpen } from "lucide-react";
 
-export default function LibrarySection() {
-  const { library } = portfolioData;
+export default function InventorySection() {
+  const { inventory } = portfolioData;
 
   return (
     <section className="py-20 px-6 bg-white">
@@ -11,12 +11,12 @@ export default function LibrarySection() {
         <div className="flex items-center gap-3 mb-12">
           <BookOpen className="w-8 h-8 text-blue-600" />
           <h2 className="text-lg md:text-xl font-bold text-gray-800">
-            BROWSE MY LIBRARY
+            BROWSE MY INVENTORY
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
-          {library.map((book, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {inventory.map((book, index) => (
             <div
               key={index}
               className="bg-gray-100 rounded-lg p-3 h-64 flex flex-col justify-between hover:shadow-lg transition-shadow"
