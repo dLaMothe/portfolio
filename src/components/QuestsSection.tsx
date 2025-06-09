@@ -22,7 +22,7 @@ export default function QuestsSection() {
   return (
     <section className="py-20 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-3 justify-center mb-12">
+        <div className="flex items-center gap-3 mb-12">
           <Code2 className="w-8 h-8 text-purple-600" />
           <h2 className="text-lg md:text-xl font-bold text-gray-800">
             EXPLORE MY QUESTS

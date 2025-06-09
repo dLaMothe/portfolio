@@ -36,7 +36,7 @@ export default function SkillsSection() {
   return (
     <section className="py-20 px-6 bg-gray-50">
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-3 justify-center mb-12">
+        <div className="flex items-center gap-3 mb-12">
           <Star className="w-8 h-8 text-yellow-500" />
           <h2 className="text-lg md:text-xl font-bold text-gray-800">
             DISCOVER MY SKILLS
