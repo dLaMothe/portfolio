@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import portfolioData from "@/data/portfolio.json";
 import { Code2, ArrowRight, Clock, Users, Wrench } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -8,6 +8,24 @@ import { useRouter } from "next/navigation";
 export default function QuestsSection() {
   const { quests } = portfolioData;
   const router = useRouter();
+
+  // Restore scroll position when component mounts
+  useEffect(() => {
+    const savedScrollPosition = sessionStorage.getItem(
+      "portfolioScrollPosition"
+    );
+    if (savedScrollPosition) {
+      // Use setTimeout to ensure the page is fully rendered before scrolling
+      setTimeout(() => {
+        window.scrollTo({
+          top: parseInt(savedScrollPosition, 10),
+          behavior: "smooth",
+        });
+        // Clear the saved position after restoring
+        sessionStorage.removeItem("portfolioScrollPosition");
+      }, 100);
+    }
+  }, []);
 
   const getSkillTagColor = (skill: string, index: number) => {
     const colors = [
@@ -24,6 +42,11 @@ export default function QuestsSection() {
   };
 
   const handleQuestClick = (questId: number) => {
+    // Save current scroll position before navigating
+    sessionStorage.setItem(
+      "portfolioScrollPosition",
+      window.scrollY.toString()
+    );
     router.push(`/quest/${questId}`);
   };
 

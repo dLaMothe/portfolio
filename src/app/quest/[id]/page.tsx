@@ -9,6 +9,866 @@ export default function QuestDetailPage() {
   const router = useRouter();
   const questId = params?.id as string;
 
+  // Quest 1: A design system for all teams
+  if (questId === "1") {
+    return (
+      <div className="min-h-screen bg-white">
+        {/* Header Image */}
+        <div
+          className="h-64 bg-cover bg-center relative"
+          style={{
+            backgroundImage: `url('https://www.notion.so/images/page-cover/met_william_morris_1875.jpg')`,
+            backgroundPosition: "center 0%",
+          }}
+        >
+          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+          <div className="absolute top-6 left-6">
+            <button
+              onClick={() => {
+                // Check if there's a previous page in history, otherwise go to home
+                if (window.history.length > 1) {
+                  router.back();
+                } else {
+                  router.push("/");
+                }
+              }}
+              className="flex items-center gap-2 px-4 py-2 bg-white bg-opacity-90 rounded-full hover:bg-opacity-100 transition-all"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              <span className="text-sm font-medium">Back to Portfolio</span>
+            </button>
+          </div>
+        </div>
+
+        <div className="max-w-4xl mx-auto px-6 -mt-16 relative z-10">
+          {/* Title Card */}
+          <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h1 className="text-3xl font-bold text-gray-800 mb-6">
+              A design system for all teams
+            </h1>
+
+            {/* Properties Grid */}
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div className="flex items-start gap-3">
+                <Clock className="w-5 h-5 text-gray-500 mt-1" />
+                <div>
+                  <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+                    Duration
+                  </p>
+                  <p className="text-gray-800">6 Month</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Users className="w-5 h-5 text-gray-500 mt-1" />
+                <div>
+                  <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+                    The Team
+                  </p>
+                  <p className="text-gray-800 text-sm">
+                    5 Designers, 1 Product Owner, 2 Developers
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Target className="w-5 h-5 text-gray-500 mt-1" />
+                <div>
+                  <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+                    Applied Skills
+                  </p>
+                  <div className="flex flex-wrap gap-1 mt-2">
+                    {["UX Design", "User Research", "UX Writing"].map(
+                      (skill, index) => (
+                        <span
+                          key={index}
+                          className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded"
+                        >
+                          {skill}
+                        </span>
+                      )
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Tools */}
+            <div className="border-t pt-6">
+              <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-2">
+                Tools
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Benchmark",
+                  "User Interviews",
+                  "Sketch",
+                  "Affinity Mapping",
+                  "Abstract",
+                ].map((tool, index) => (
+                  <span
+                    key={index}
+                    className="px-3 py-1 text-sm bg-gray-100 text-gray-800 rounded-full"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Main Question */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">
+              How might we create a design system that each role and team will
+              benefit from?
+            </h2>
+          </div>
+
+          {/* Problem, Goal, Challenge */}
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-red-50 p-6 rounded-lg">
+              <h3 className="text-lg font-bold text-gray-800 mb-4">Problem</h3>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                Different teams where spending time on building the same UI
+                elements in different ways. This was not only costly but would
+                also fracture the look and feel of the brand.
+              </p>
+            </div>
+            <div className="bg-green-50 p-6 rounded-lg">
+              <h3 className="text-lg font-bold text-gray-800 mb-4">Goal</h3>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                Create a single source of truth that all teams can use no matter
+                which customer group (B2B or B2C), platform (web, app) or
+                touchpoint (in store, at home) they are working on.
+              </p>
+            </div>
+            <div className="bg-blue-50 p-6 rounded-lg">
+              <h3 className="text-lg font-bold text-gray-800 mb-4">
+                Challenge
+              </h3>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                Make it easier for for everyone to use the Design System and
+                provided components, than creating new ones.
+              </p>
+            </div>
+          </div>
+
+          {/* The Process */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">
+              The Process
+            </h2>
+            <div className="bg-gray-50 rounded-lg overflow-hidden">
+              <table className="w-full">
+                <tbody>
+                  {[
+                    {
+                      phase: "Internal Interviews",
+                      description:
+                        "We conducted internal interviews to understand the unique needs of various roles. From these discussions, we translated their expectations for the design system into meaningful improvements to their daily workflows we could deliver.",
+                    },
+                    {
+                      phase: "UI Audit",
+                      description:
+                        "We conducted a UI audit to catalog all existing components, their use cases, and the various touchpoints to consider when creating a unified source of truth.",
+                    },
+                    {
+                      phase: "Workshop a Visual Language",
+                      description:
+                        "We held a workshop to develop a visual language that accounts for diverse use cases, ensuring that interfaces and components not yet included in the design system can be created with a consistent look and fee in the future.",
+                    },
+                    {
+                      phase: "Brainstorm & Decide",
+                      description:
+                        "We brainstormed and finalized key guidelines to communicate, ensuring all designers are aligned on decisions regarding the architecture and anatomy of interfaces.",
+                    },
+                    {
+                      phase: "Write the Content",
+                      description:
+                        "We drafted content outlining the guidelines to present and discuss collaboratively, iterating until we established a shared understanding and consistent language. The content was later refined by a professional writer before being officially included in the design system.",
+                    },
+                    {
+                      phase: "Create Infographics",
+                      description:
+                        "We created infographics to effectively communicate the guidelines, leveraging the power of visuals to convey complex concepts more clearly, especially for these visual topics.",
+                    },
+                    {
+                      phase: "Document & Build",
+                      description:
+                        "We documented and built all identified UI components, providing designers with a comprehensive resource to browse, understand, and evaluate existing components. This allows them to determine whether they can use existing elements for their projects or actually need to create new ones.",
+                    },
+                    {
+                      phase: "Create Libraries",
+                      description:
+                        "We created libraries for daily use, with resources tailored to different roles: Sketch libraries for designers and React component libraries for developers.",
+                    },
+                  ].map((step, index) => (
+                    <tr
+                      key={index}
+                      className={index % 2 === 0 ? "bg-white" : "bg-gray-100"}
+                    >
+                      <td className="px-6 py-4 font-semibold text-gray-800 w-1/3 border-r border-gray-200">
+                        {step.phase}
+                      </td>
+                      <td className="px-6 py-4 text-gray-700 text-sm leading-relaxed">
+                        {step.description}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Learnings & Decisions */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">
+              Learnings & Decisions
+            </h2>
+            <div className="space-y-6">
+              {[
+                {
+                  title: "Atomic Structure",
+                  content:
+                    'With all the different colours that where introduced to our interfaces over time, we knew we had to begin at the very foundation. Our design system\'s structure draws inspiration from Atomic Design by Brad Frost. To better align with our needs, we customised the pillars of Atomic Design. "Atoms" became "Basics," "Molecules" turned into "UI Elements," and "Organisms" evolved into "UI Patterns," which we found more intuitive and descriptive. Instead of "Templates" and "Pages," we opted to provide detailed information about the navigation architecture and common page structures across our various products.',
+                },
+                {
+                  title: "Futura-Inspired Design",
+                  content:
+                    "Our brand's primary font, Futura, was a significant source of inspiration. Its distinct characteristics—such as rounded shapes, sharp corners, proportions, and spacing—influenced key aspects of our design, from border radii to sizing and spacing guidelines. To maintain visual cohesion, we also developed an icon font based on Futura, ensuring seamless integration when used together.",
+                },
+                {
+                  title: "DIY Design Thinking",
+                  content:
+                    "We aimed to go beyond documenting UI elements by embedding our company's design philosophy into our guidelines. This approach empowered every role to think like a designer. To achieve this, we created a wiki that not only served as a repository but also included interactive features. These allowed users to explore design behaviors such as state changes and responsive stretching across screen sizes, enabling both experiential learning and deeper understanding.",
+                },
+                {
+                  title: "Based on it's users",
+                  content:
+                    "Our company wasn't small; it consisted of many teams catering to diverse user groups. We developed interfaces tailored to the end customer, the optician, shared optician-customer use, and the office employee. We made sure to take their different needs into consideration. For example, customer-facing interfaces emphasised white space and legibility—especially important for those who need glasses. In contrast, opticians' interfaces prioritised displaying more information and options simultaneously to support their workflow.",
+                },
+                {
+                  title: "Built-In Flexibility",
+                  content:
+                    "With multiple teams working on diverse products, new needs and UI elements were always emerging. To foster a continuous feedback loop, we used the software Abstract to keep everyone aligned and to streamline suggestions from other teams. Additionally, we held biweekly meetings to present new designs, identify redundancies, and ensure smooth collaboration across teams.",
+                },
+              ].map((learning, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-100 rounded-lg p-6 flex gap-4"
+                >
+                  <Lightbulb className="w-6 h-6 text-yellow-500 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-bold text-gray-800 mb-2">
+                      {learning.title}
+                    </h3>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      {learning.content}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Fun Fact */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Fun Fact</h2>
+            <p className="text-gray-700 leading-relaxed">
+              The wording and definition of Basics, UI Elements and UI Patterns
+              sticks with me to this date.
+            </p>
+          </div>
+
+          {/* Lesson Learned */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">
+              Lesson learned
+            </h2>
+            <div className="bg-amber-50 border-l-4 border-amber-400 p-6 rounded">
+              <p className="text-gray-700 leading-relaxed">
+                Because everything was built on a platform we even wrote
+                ourselves, the design system not evolved anymore after my team
+                left the company a couple years later. If we had done this with
+                a more accessible online tool, the design system could have been
+                carried on by anyone, not only us.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Quest 2: Easy ordering for every diet
+  if (questId === "2") {
+    return (
+      <div className="min-h-screen bg-white">
+        {/* Header Image */}
+        <div
+          className="h-64 bg-cover bg-center relative"
+          style={{
+            backgroundImage: `url('https://www.notion.so/images/page-cover/met_william_morris_1878.jpg')`,
+            backgroundPosition: "center 0%",
+          }}
+        >
+          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+          <div className="absolute top-6 left-6">
+            <button
+              onClick={() => {
+                // Check if there's a previous page in history, otherwise go to home
+                if (window.history.length > 1) {
+                  router.back();
+                } else {
+                  router.push("/");
+                }
+              }}
+              className="flex items-center gap-2 px-4 py-2 bg-white bg-opacity-90 rounded-full hover:bg-opacity-100 transition-all"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              <span className="text-sm font-medium">Back to Portfolio</span>
+            </button>
+          </div>
+        </div>
+
+        <div className="max-w-4xl mx-auto px-6 -mt-16 relative z-10">
+          {/* Title Card */}
+          <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h1 className="text-3xl font-bold text-gray-800 mb-6">
+              Easy ordering for every diet
+            </h1>
+
+            {/* Properties Grid */}
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div className="flex items-start gap-3">
+                <Clock className="w-5 h-5 text-gray-500 mt-1" />
+                <div>
+                  <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+                    Duration
+                  </p>
+                  <p className="text-gray-800">1 Month</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Users className="w-5 h-5 text-gray-500 mt-1" />
+                <div>
+                  <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+                    The Team
+                  </p>
+                  <p className="text-gray-800 text-sm">
+                    3 Designers, 1 CEO, 1 Product Owner, 1 Developer
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Target className="w-5 h-5 text-gray-500 mt-1" />
+                <div>
+                  <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+                    Applied Skills
+                  </p>
+                  <div className="flex flex-wrap gap-1 mt-2">
+                    {[
+                      "User Research",
+                      "UX Design",
+                      "UX Writing",
+                      "Workshop Facilitation",
+                    ].map((skill, index) => (
+                      <span
+                        key={index}
+                        className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Tools */}
+            <div className="border-t pt-6">
+              <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-2">
+                Tools
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Expert Interviews ❤️",
+                  "HMW",
+                  "Desk Research",
+                  "Lightning Demos",
+                  "User Testing",
+                  "Figma ❤️",
+                ].map((tool, index) => (
+                  <span
+                    key={index}
+                    className="px-3 py-1 text-sm bg-gray-100 text-gray-800 rounded-full"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Main Question */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">
+              How might we make altering a dish in an app as quick as telling it
+              to a person?
+            </h2>
+          </div>
+
+          {/* Problem, Goal, Challenge */}
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-red-50 p-6 rounded-lg">
+              <h3 className="text-lg font-bold text-gray-800 mb-4">Problem</h3>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                Finding a restaurant can take quite some time and discussion
+                with your lunch group. You want something that is quickly
+                prepared because time is short. But also something healthy that
+                still suits the diverse set of diets within your group of
+                coworkers.
+              </p>
+            </div>
+            <div className="bg-green-50 p-6 rounded-lg">
+              <h3 className="text-lg font-bold text-gray-800 mb-4">Goal</h3>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                Create an ordering experience that is as quick as the
+                preparation while still highlighting the flexibility of the
+                restaurants dishes.
+              </p>
+            </div>
+            <div className="bg-blue-50 p-6 rounded-lg">
+              <h3 className="text-lg font-bold text-gray-800 mb-4">
+                Challenge
+              </h3>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                The restaurant has no human employees. Instead a robot arm will
+                prepares the healthy meals. Although a robot cook is
+                fascinating, it is not supposed to be the center of attention.
+                The flexible menu is.
+              </p>
+            </div>
+          </div>
+
+          {/* The Process */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">
+              The Process
+            </h2>
+            <div className="bg-gray-50 rounded-lg overflow-hidden">
+              <table className="w-full">
+                <tbody>
+                  {[
+                    {
+                      phase: "Market Research",
+                      description:
+                        "We began by studying existing restaurant ordering apps to understand their user experiences, the steps involved, and the common design patterns familiar to users. This provided a foundation for creating a user-friendly and intuitive interface.",
+                    },
+                    {
+                      phase: "Conduct a Design Sprint",
+                      description:
+                        "To quickly arrive at a testable prototype, we conducted a one-week Design Sprint. This intensive process included: 1) Workshops to explore the field and define the problem space. 2) Setting clear KPIs to measure success. 3) Ideating potential solutions. 4) Creating a prototype ready for user testing. 5) Testing the prototype with potential users to gather valuable insights. This approach allowed us to allocate time for at least one iteration within the project timeline.",
+                    },
+                    {
+                      phase: "Build the final Design",
+                      description:
+                        "Using the feedback from user testing, we refined and finalized the design. Every decision, along with detailed documentation of screens, was prepared to ensure seamless handoff to the internal development team for implementation.",
+                    },
+                  ].map((step, index) => (
+                    <tr
+                      key={index}
+                      className={index % 2 === 0 ? "bg-white" : "bg-gray-100"}
+                    >
+                      <td className="px-6 py-4 font-semibold text-gray-800 w-1/3 border-r border-gray-200">
+                        {step.phase}
+                      </td>
+                      <td className="px-6 py-4 text-gray-700 text-sm leading-relaxed">
+                        {step.description}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Learnings & Decisions */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">
+              Learnings & Decisions
+            </h2>
+            <div className="space-y-6">
+              {[
+                {
+                  title: "A Human Touch",
+                  content:
+                    "In the absence of human interaction, we brought warmth to the experience through a conversational tone in the interface, making the restaurant feel welcoming and personable.",
+                },
+                {
+                  title: "Filter, Don't Search",
+                  content:
+                    "We prioritized a filtering system on the initial view, allowing users to quickly input dietary preferences. The filter was designed as a sentence completion task, creating the feel of a waiter taking their order. Popular tags were prominently displayed, while more specific options were tucked behind a 'more' button for accessibility.",
+                },
+                {
+                  title: "Quick Overview",
+                  content:
+                    "The menu was designed to be extensive and adaptable, evolving over time. Here our focus was to ensure users could effortlessly navigate the options and quickly find the perfect meal. For that we reused the wording and color coding that was designed for the filter as a tagging system.",
+                },
+                {
+                  title: "Transparency",
+                  content:
+                    "To accommodate users' specific health needs, we made key nutritional information and ingredients easy to discover and scan. This transparency empowered users to make informed choices.",
+                },
+                {
+                  title: "Flexibility",
+                  content:
+                    "With countless diets and personal preferences, we focused on the usability for the 'create your own meal from scratch' flow. We also adapted the same patterns to the customisation of an existing dish to streamline their experience.",
+                },
+                {
+                  title: "Fun and Easy Identification",
+                  content:
+                    "To notify users about their ready orders, we asked them to input their initials, which were paired with a unique emoji to avoid confusion in cases of duplicate initials. This small touch not only ensured clarity but also added an element of curiosity, surprise and delight, bringing smiles as users discovered their assigned emoji.",
+                },
+              ].map((learning, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-100 rounded-lg p-6 flex gap-4"
+                >
+                  <Lightbulb className="w-6 h-6 text-yellow-500 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-bold text-gray-800 mb-2">
+                      {learning.title}
+                    </h3>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      {learning.content}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Fun Fact */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Fun Fact</h2>
+            <p className="text-gray-700 leading-relaxed">
+              With a lot of sweat but thankfully no tears the design sprint was
+              held in a tiny room, mid summer. Still, the interface was
+              validated and ready for development within 2 weeks.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Quest 4: Custom lists for self organisation
+  if (questId === "4") {
+    return (
+      <div className="min-h-screen bg-white">
+        {/* Header Image */}
+        <div
+          className="h-64 bg-cover bg-center relative"
+          style={{
+            backgroundImage: `url('https://www.notion.so/images/page-cover/met_silk_kashan_carpet.jpg')`,
+            backgroundPosition: "center 50%",
+          }}
+        >
+          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+          <div className="absolute top-6 left-6">
+            <button
+              onClick={() => {
+                // Check if there's a previous page in history, otherwise go to home
+                if (window.history.length > 1) {
+                  router.back();
+                } else {
+                  router.push("/");
+                }
+              }}
+              className="flex items-center gap-2 px-4 py-2 bg-white bg-opacity-90 rounded-full hover:bg-opacity-100 transition-all"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              <span className="text-sm font-medium">Back to Portfolio</span>
+            </button>
+          </div>
+        </div>
+
+        <div className="max-w-4xl mx-auto px-6 -mt-16 relative z-10">
+          {/* Title Card */}
+          <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h1 className="text-3xl font-bold text-gray-800 mb-6">
+              Custom lists for self organisation
+            </h1>
+
+            {/* Properties Grid */}
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div className="flex items-start gap-3">
+                <Clock className="w-5 h-5 text-gray-500 mt-1" />
+                <div>
+                  <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+                    Duration
+                  </p>
+                  <p className="text-gray-800">2 Month</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Users className="w-5 h-5 text-gray-500 mt-1" />
+                <div>
+                  <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+                    The Team
+                  </p>
+                  <p className="text-gray-800 text-sm">
+                    2 Designers, 1 Product Owner, 6 Developers, 1 Marketing
+                    Consultant, 1 Content Consultant
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Target className="w-5 h-5 text-gray-500 mt-1" />
+                <div>
+                  <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+                    Applied Skills
+                  </p>
+                  <div className="flex flex-wrap gap-1 mt-2">
+                    {[
+                      "UX Design",
+                      "User Research",
+                      "Prototyping",
+                      "Workshop Facilitation",
+                    ].map((skill, index) => (
+                      <span
+                        key={index}
+                        className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Tools */}
+            <div className="border-t pt-6">
+              <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-2">
+                Tools
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Figma ❤️",
+                  "User Testing",
+                  "Desk Research",
+                  "Behavioural Psychology",
+                  "Opportunity decision tree ❤️",
+                  "JTBD",
+                  "Wireframing",
+                  "Benchmark",
+                  "User Interviews",
+                  "rapid Usertests",
+                  "Hotjar ❤️",
+                  "Miro ❤️",
+                ].map((tool, index) => (
+                  <span
+                    key={index}
+                    className="px-3 py-1 text-sm bg-gray-100 text-gray-800 rounded-full"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Main Question */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">
+              How might we offer users a way to organise and customise their own
+              yoga practices?
+            </h2>
+          </div>
+
+          {/* Problem, Goal, Challenge */}
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-red-50 p-6 rounded-lg">
+              <h3 className="text-lg font-bold text-gray-800 mb-4">Problem</h3>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                User accumulated many many videos in their favourites list over
+                time which made it hard to find a specific one when needed. They
+                were leaving comments and contacting support about this issue
+                for quite some time already and suggesting their own possible
+                solutions.
+              </p>
+            </div>
+            <div className="bg-green-50 p-6 rounded-lg">
+              <h3 className="text-lg font-bold text-gray-800 mb-4">Goal</h3>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                Reduce the friction between deciding to do yoga and starting a
+                session by helping users to organise their favourite videos.
+              </p>
+            </div>
+            <div className="bg-blue-50 p-6 rounded-lg">
+              <h3 className="text-lg font-bold text-gray-800 mb-4">
+                Challenge
+              </h3>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                Identify a solution with focus on feasibility, so we can
+                implement it quickly without overthrowing the existing favourite
+                lists of our customers or the apps current navigation.
+              </p>
+            </div>
+          </div>
+
+          {/* The Process */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">
+              The Process
+            </h2>
+            <div className="bg-gray-50 rounded-lg overflow-hidden">
+              <table className="w-full">
+                <tbody>
+                  {[
+                    {
+                      phase: "Categorise Feedback and Brainstorm Solutions",
+                      description:
+                        "To organise and address our customers' accumulated suggestions from feedback and support messages, I facilitated a session to categorise feedback and brainstorm solutions. Colleagues from marketing and customer support joined us for this session, as they frequently hear user suggestions directly and can provide valuable insights.",
+                    },
+                    {
+                      phase: "Test 2 different ideas",
+                      description:
+                        "We decided on testing two competing approaches (a calendar and a list feature) using simple, rough click-dummies to determine which solution addresses the problem more effectively.",
+                    },
+                    {
+                      phase: "Tree Testing",
+                      description:
+                        "I set up a tree test to determine the optimal placement of the feature within our existing information architecture.",
+                    },
+                    {
+                      phase: "Adapt the Design",
+                      description:
+                        "We adapted the design for all platforms (tablet and web) to ensure a seamless cross-platform experience, recognising that users frequently discover and watch videos across multiple devices.",
+                    },
+                  ].map((step, index) => (
+                    <tr
+                      key={index}
+                      className={index % 2 === 0 ? "bg-white" : "bg-gray-100"}
+                    >
+                      <td className="px-6 py-4 font-semibold text-gray-800 w-1/3 border-r border-gray-200">
+                        {step.phase}
+                      </td>
+                      <td className="px-6 py-4 text-gray-700 text-sm leading-relaxed">
+                        {step.description}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Learnings & Decisions */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">
+              Learnings & Decisions
+            </h2>
+            <div className="space-y-6">
+              {[
+                {
+                  title: "Stay authentic while being digital",
+                  content:
+                    "Digital yoga should preserve the essence of real yoga. When testing a prototype that allowed users to schedule specific yoga videos by date and time, we discovered it created a sense of pressure and obligation—feelings that go against the spirit of yoga. Instead we continued with the competing idea, the possibility to crate personal, flexible lists that keep up the spirit of Yoga.",
+                },
+                {
+                  title: "Allow planing while avoiding pressure",
+                  content:
+                    "We found that our users wanted not only to save videos but also to plan them in a way that aligned with the principles of yoga. Instead of offering a traditional calendar, we provided the ability to arrange and reorder videos within a customizable list. This allowed users to plan for specific time frames or design their own personalized programs.",
+                },
+                {
+                  title: "It is not a playlist",
+                  content:
+                    "Users typically watch the same video just once per session, making an auto-play feature more of an annoyance than a benefit. It would require them to quit videos more often than it would be helpful.",
+                },
+                {
+                  title: "Embrace what users already do",
+                  content:
+                    'Users expressed a desire for variety, mentioning they didn\'t want to repeat the same video too often. Some even managed this manually with paper lists, noting which videos to avoid because "I just did that last week." To address this need, we added a "last seen" date to each video in the list, making it easier to track and plan.',
+                },
+                {
+                  title: "Use familiar places",
+                  content:
+                    'Through tree testing, we aimed to determine where this feature should be placed within our existing structure to ensure it was easily discoverable by new users and embraced by existing ones. Ultimately, we decided to build on top of the "favorites" section. This location was not only highly rated but also addressed a pain point in its current form. The choice of placement also influenced the design of the signifier. We modified the heart icon (added a little plus) to reflect its expanded functionality while retaining its basic shape to maintain familiarity and association.',
+                },
+              ].map((learning, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-100 rounded-lg p-6 flex gap-4"
+                >
+                  <Lightbulb className="w-6 h-6 text-yellow-500 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-bold text-gray-800 mb-2">
+                      {learning.title}
+                    </h3>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      {learning.content}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* User Feedback */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">
+              Feedback from our users
+            </h2>
+            <div className="space-y-6">
+              <blockquote className="bg-blue-50 border-l-4 border-blue-400 p-6 italic">
+                &quot;...I also enjoy filling my own categories at Favorieten,
+                so that I can find my favorite courses very quickly. Please by
+                all means keep up the good work, I&apos;m a really big
+                fan!&quot;
+              </blockquote>
+              <blockquote className="bg-green-50 border-l-4 border-green-400 p-6 italic">
+                &quot;Very good app to practice yoga at home. Now also with list
+                function for favorites. Super handy and great yoga videos and
+                meditations.&quot;
+              </blockquote>
+            </div>
+          </div>
+
+          {/* Lesson Learned */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">
+              Lesson learned
+            </h2>
+            <div className="bg-amber-50 border-l-4 border-amber-400 p-6 rounded">
+              <p className="text-gray-700 leading-relaxed">
+                Researching, designing and building this feature was nothing but
+                a joy as it wasn&apos;t too complex but would have a big impact.
+                Releasing it on the other hand brought difficulties with it I
+                haven&apos;t encountered before. We were having
+                miscommunications about how to introduce this new feature in
+                different places to our users. Now I know to start syncing early
+                enough.
+              </p>
+            </div>
+          </div>
+
+          {/* Fun Fact */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Fun Fact</h2>
+            <p className="text-gray-700 leading-relaxed">
+              Because this is a German app we had several lengthy discussions
+              about the name of the feature that would appear in the navigation.
+              As it is German tradition it ended up being quite the lengthy
+              &quot;Favorietenlisten&quot;.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   // Quest 5: A filter for every yogi
   if (questId === "5") {
     return (
@@ -24,7 +884,14 @@ export default function QuestDetailPage() {
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
           <div className="absolute top-6 left-6">
             <button
-              onClick={() => router.push("/")}
+              onClick={() => {
+                // Check if there's a previous page in history, otherwise go to home
+                if (window.history.length > 1) {
+                  router.back();
+                } else {
+                  router.push("/");
+                }
+              }}
               className="flex items-center gap-2 px-4 py-2 bg-white bg-opacity-90 rounded-full hover:bg-opacity-100 transition-all"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -390,7 +1257,14 @@ export default function QuestDetailPage() {
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
           <div className="absolute top-6 left-6">
             <button
-              onClick={() => router.push("/")}
+              onClick={() => {
+                // Check if there's a previous page in history, otherwise go to home
+                if (window.history.length > 1) {
+                  router.back();
+                } else {
+                  router.push("/");
+                }
+              }}
               className="flex items-center gap-2 px-4 py-2 bg-white bg-opacity-90 rounded-full hover:bg-opacity-100 transition-all"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -686,7 +1560,14 @@ export default function QuestDetailPage() {
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         <div className="absolute top-6 left-6">
           <button
-            onClick={() => router.push("/")}
+            onClick={() => {
+              // Check if there's a previous page in history, otherwise go to home
+              if (window.history.length > 1) {
+                router.back();
+              } else {
+                router.push("/");
+              }
+            }}
             className="flex items-center gap-2 px-4 py-2 bg-white bg-opacity-90 rounded-full hover:bg-opacity-100 transition-all"
           >
             <ArrowLeft className="w-4 h-4" />
