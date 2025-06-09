@@ -1,18 +1,20 @@
 import React from "react";
 import portfolioData from "@/data/portfolio.json";
-import { Code2, ArrowUpRight } from "lucide-react";
+import { Code2, ArrowRight } from "lucide-react";
 
 export default function QuestsSection() {
   const { quests } = portfolioData;
 
   const getTechTagColor = (tech: string, index: number) => {
     const colors = [
-      "bg-blue-100 text-blue-800 border border-blue-200", // Light blue
-      "bg-yellow-100 text-yellow-800 border border-yellow-200", // Light yellow
-      "bg-orange-100 text-orange-800 border border-orange-200", // Light orange
-      "bg-red-100 text-red-800 border border-red-200", // Light red
-      "bg-green-100 text-green-800 border border-green-200", // Light green
-      "bg-purple-100 text-purple-800 border border-purple-200", // Light purple
+      "bg-blue-500 text-white", // Bold blue
+      "bg-yellow-400 text-black", // Bright yellow
+      "bg-orange-500 text-white", // Vibrant orange
+      "bg-red-500 text-white", // Bold red
+      "bg-green-500 text-white", // Bright green
+      "bg-purple-500 text-white", // Bold purple
+      "bg-pink-500 text-white", // Hot pink
+      "bg-cyan-500 text-white", // Bright cyan
     ];
     return colors[index % colors.length];
   };
@@ -22,7 +24,7 @@ export default function QuestsSection() {
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center gap-3 justify-center mb-12">
           <Code2 className="w-8 h-8 text-purple-600" />
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+          <h2 className="text-lg md:text-xl font-bold text-gray-800">
             EXPLORE MY QUESTS
           </h2>
         </div>
@@ -31,38 +33,38 @@ export default function QuestsSection() {
           {quests.map((quest) => (
             <div
               key={quest.id}
-              className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+              className="bg-white rounded-lg border-2 border-black overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
             >
               {/* Header */}
-              <div className="p-4 flex items-center justify-between">
-                <span className="text-sm font-medium text-gray-500 lowercase tracking-wide">
+              <div className="p-3 flex items-center justify-between bg-gray-100">
+                <span className="text-xs font-bold text-black lowercase tracking-wide">
                   [{quest.category.toLowerCase().replace(/\s+/g, "")}]
                 </span>
-                <ArrowUpRight className="w-4 h-4 text-gray-400" />
+                <ArrowRight className="w-4 h-4 text-black" />
               </div>
 
               {/* Large Image Area */}
-              <div className="relative h-48 mx-4 mb-4 rounded-lg overflow-hidden bg-gray-100">
+              <div className="relative h-48 bg-gray-400 overflow-hidden">
                 <img
                   src={quest.image}
                   alt={quest.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
 
               {/* Bottom Content */}
-              <div className="p-4 pt-0">
+              <div className="p-3 bg-gray-100">
                 {/* Title */}
-                <h3 className="text-base font-semibold text-gray-900 mb-3 leading-tight">
+                <h3 className="text-sm font-bold text-black mb-3 leading-tight">
                   {quest.title}
                 </h3>
 
                 {/* Technology Tags */}
-                <div className="flex flex-wrap gap-1.5">
-                  {quest.technologies.slice(0, 4).map((tech, index) => (
+                <div className="flex flex-wrap gap-1">
+                  {quest.technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className={`px-2 py-1 rounded-md text-xs font-medium ${getTechTagColor(
+                      className={`px-2 py-1 text-xs font-bold border-2 border-black ${getTechTagColor(
                         tech,
                         index
                       )}`}

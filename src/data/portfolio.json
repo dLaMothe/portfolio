@@ -39,7 +39,7 @@
       "title": "Task Management App",
       "category": "Collaboration Tools",
       "description": "Collaborative workspace for team productivity with real-time updates, file sharing, and progress tracking.",
-      "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=200&fit=crop&auto=format",
+      "image": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=400&h=200&fit=crop&auto=format",
       "technologies": ["Vue.js", "Firebase", "Vuetify", "PWA"],
       "status": "In Progress",
       "gradient": "quest-2"
@@ -88,33 +88,45 @@
   "skills": [
     {
       "category": "Frontend",
+      "description": "In 2015 I started out my career as a UX designer. I chose this profession simply because it brings me joy. I love that, as a designer, I can help people with creativity. When I try to explain what UX is (which is not that rare of an occurrence), I usually tell people that it is the process of enhancing user satisfaction with a product by improving the usability, accessibility, and pleasure provided in the interaction with the product.",
       "items": ["React", "Vue.js", "TypeScript", "Next.js"],
-      "color": "skill-blue"
+      "color": "skill-blue",
+      "icon": "frontend"
     },
     {
       "category": "Backend",
+      "description": "Server-side development is where the magic happens behind the scenes. I build robust APIs, manage databases, and ensure seamless data flow. From authentication systems to complex business logic, I create the foundation that powers great user experiences.",
       "items": ["Node.js", "Python", "PostgreSQL", "MongoDB"],
-      "color": "skill-green"
+      "color": "skill-green",
+      "icon": "backend"
     },
     {
       "category": "Design",
+      "description": "Design is not just about making things look pretty - it's about solving problems and creating meaningful experiences. I approach every design challenge with empathy for the user and a deep understanding of business goals and technical constraints.",
       "items": ["Figma", "Adobe XD", "Sketch", "Photoshop"],
-      "color": "skill-pink"
+      "color": "skill-pink",
+      "icon": "design"
     },
     {
       "category": "Tools",
+      "description": "The right tools make all the difference in development workflow. I leverage modern development tools and practices to ensure code quality, efficient deployment, and seamless collaboration across teams and projects.",
       "items": ["Git", "Docker", "AWS", "Jenkins"],
-      "color": "skill-purple"
+      "color": "skill-purple",
+      "icon": "tools"
     },
     {
       "category": "Mobile",
+      "description": "Mobile-first is not just a buzzword - it's a necessity in today's world. I create native and cross-platform mobile applications that deliver exceptional user experiences across iOS and Android platforms.",
       "items": ["React Native", "Flutter", "iOS", "Android"],
-      "color": "skill-orange"
+      "color": "skill-orange",
+      "icon": "mobile"
     },
     {
       "category": "Testing",
+      "description": "Quality assurance is crucial for delivering reliable software. I implement comprehensive testing strategies including unit tests, integration tests, and end-to-end testing to ensure robust and maintainable applications.",
       "items": ["Jest", "Cypress", "Storybook", "Playwright"],
-      "color": "skill-yellow"
+      "color": "skill-yellow",
+      "icon": "testing"
     }
   ],
   "library": [

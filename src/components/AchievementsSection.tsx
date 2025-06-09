@@ -10,7 +10,7 @@ export default function AchievementsSection() {
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center gap-3 justify-center mb-12">
           <Award className="w-8 h-8 text-yellow-500" />
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+          <h2 className="text-lg md:text-xl font-bold text-gray-800">
             VIEW MY ACHIEVEMENTS
           </h2>
         </div>
@@ -19,18 +19,18 @@ export default function AchievementsSection() {
           {achievements.map((achievement, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow"
+              className="bg-white rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow"
             >
-              <div className="bg-yellow-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                <Award className="w-6 h-6 text-yellow-600" />
+              <div className="bg-yellow-100 w-10 h-10 rounded-full flex items-center justify-center mb-3">
+                <Award className="w-5 h-5 text-yellow-600" />
               </div>
-              <h3 className="font-bold text-lg mb-2 text-gray-800">
+              <h3 className="font-bold text-sm mb-2 text-gray-800">
                 {achievement.title}
               </h3>
-              <p className="text-sm text-gray-600 mb-2">
+              <p className="text-xs text-gray-600 mb-2">
                 {achievement.issuer} • {achievement.date}
               </p>
-              <p className="text-sm text-gray-500 leading-relaxed">
+              <p className="text-xs text-gray-500 leading-relaxed">
                 {achievement.description}
               </p>
             </div>
