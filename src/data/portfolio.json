@@ -87,46 +87,153 @@
   ],
   "skills": [
     {
-      "category": "Frontend",
-      "description": "In 2015 I started out my career as a UX designer. I chose this profession simply because it brings me joy. I love that, as a designer, I can help people with creativity. When I try to explain what UX is (which is not that rare of an occurrence), I usually tell people that it is the process of enhancing user satisfaction with a product by improving the usability, accessibility, and pleasure provided in the interaction with the product.",
-      "items": ["React", "Vue.js", "TypeScript", "Next.js"],
+      "category": "UX | User Experience Design",
+      "description": "In 2015 I started out my career as a UX designer. I chose this profession simply because it brings me joy. I love that, as a designer, I can help people with creativity. When I try to explain what UX is (which is not that rare of an occurrence still) I like to use the metaphor of an architect. When building a house, you first need to figure out what rooms should be in it, and then make sure that visitors find a bathroom quickly they need one.",
+      "tools": [
+        "Double Diamond",
+        "Wireframing",
+        "Workshop Facilitation",
+        "Behavioural Psychology",
+        "Opportunity decision tree ❤️",
+        "Journey Mapping",
+        "JTBD",
+        "HMW",
+        "Affinity Mapping",
+        "Lightning Demos",
+        "Crazy 8s ❤️",
+        "Expert Interviews ❤️",
+        "Miro ❤️",
+        "Figma ❤️"
+      ],
+      "skillLevel": "▰▰▰▰▰▰▰▰▱▱",
+      "quests": [
+        "OOUXing my Portfolio",
+        "A design system for all teams",
+        "Easy ordering for every diet",
+        "Custom lists for self organisation",
+        "A filter for every yogi",
+        "Effortless onboarding with a personalised reward"
+      ],
       "color": "skill-blue",
-      "icon": "frontend"
-    },
-    {
-      "category": "Backend",
-      "description": "Server-side development is where the magic happens behind the scenes. I build robust APIs, manage databases, and ensure seamless data flow. From authentication systems to complex business logic, I create the foundation that powers great user experiences.",
-      "items": ["Node.js", "Python", "PostgreSQL", "MongoDB"],
-      "color": "skill-green",
-      "icon": "backend"
-    },
-    {
-      "category": "Design",
-      "description": "Design is not just about making things look pretty - it's about solving problems and creating meaningful experiences. I approach every design challenge with empathy for the user and a deep understanding of business goals and technical constraints.",
-      "items": ["Figma", "Adobe XD", "Sketch", "Photoshop"],
-      "color": "skill-pink",
       "icon": "design"
     },
     {
-      "category": "Tools",
-      "description": "The right tools make all the difference in development workflow. I leverage modern development tools and practices to ensure code quality, efficient deployment, and seamless collaboration across teams and projects.",
-      "items": ["Git", "Docker", "AWS", "Jenkins"],
-      "color": "skill-purple",
-      "icon": "tools"
+      "category": "User Research",
+      "description": "I always like to work very closely with researchers or take on the role myself. I see it as an interglacial part as it is the foundation for all decisions throughout the design process. I find it very exciting to learn something new or surprising or seeing that an idea actually worked. It's the feedback loop that keeps product development going.",
+      "tools": [
+        "Tree Testing ❤️",
+        "Card Sorting ❤️",
+        "Wizard of Oz",
+        "Desk Research",
+        "User Interviews",
+        "User Testing",
+        "rapid Usertests",
+        "Benchmark",
+        "Optimal Workshop ❤️",
+        "Hotjar ❤️"
+      ],
+      "skillLevel": "▰▰▰▰▱▱▱▱▱▱",
+      "quests": [
+        "A design system for all teams",
+        "Easy ordering for every diet",
+        "Custom lists for self organisation",
+        "A filter for every yogi",
+        "Effortless onboarding with a personalised reward"
+      ],
+      "color": "skill-green",
+      "icon": "frontend"
     },
     {
-      "category": "Mobile",
-      "description": "Mobile-first is not just a buzzword - it's a necessity in today's world. I create native and cross-platform mobile applications that deliver exceptional user experiences across iOS and Android platforms.",
-      "items": ["React Native", "Flutter", "iOS", "Android"],
-      "color": "skill-orange",
+      "category": "Prototyping",
+      "description": "Prototyping has been a part of my work since the beginning. This is my zen work. I love to sit down, put on some music and just build. Especially since Figma introduced basic logic to their prototyping capabilities it's been even more fun to be able to make a user test feel as realistic as possible (if needed).",
+      "tools": ["Figma ❤️", "User Interviews", "Wizard of Oz", "Miro ❤️"],
+      "skillLevel": "▰▰▰▰▰▰▰▰▰▱",
+      "quests": [
+        "Custom lists for self organisation",
+        "A filter for every yogi",
+        "Effortless onboarding with a personalised reward"
+      ],
+      "color": "skill-pink",
       "icon": "mobile"
     },
     {
-      "category": "Testing",
-      "description": "Quality assurance is crucial for delivering reliable software. I implement comprehensive testing strategies including unit tests, integration tests, and end-to-end testing to ensure robust and maintainable applications.",
-      "items": ["Jest", "Cypress", "Storybook", "Playwright"],
+      "category": "UI | User Interface Design",
+      "description": "I've been doing UI alongside UX since 2021. For me UI is not only making things look nice. It's about conveying specific feelings thats suits the task at hand while staying aligned with brand guidelines and design systems. It's about knowing when to be loud and bold to show the brands colors, and when to quite down and guid the users eye to let them focus on important informations.",
+      "tools": [
+        "Figma ❤️",
+        "Mobbin ❤️",
+        "Gestallt Principles",
+        "Sketch",
+        "Abstract"
+      ],
+      "skillLevel": "▰▰▰▰▰▰▱▱▱▱",
+      "quests": ["OOUXing my Portfolio"],
+      "color": "skill-purple",
+      "icon": "design"
+    },
+    {
+      "category": "OOUX | Object Oriented User Experience",
+      "description": "OOUX is a design philosophy that respects the fact, that we think in nouns. That our mental modals form around objects. It helps me to understand users and systems more quickly and easily while also being a grate way of collaborating with other roles in the product team. I really enjoy this way of thinking and would love to work on a project that uses the entire process around!",
+      "tools": ["Miro ❤️", "Figma ❤️", "Notion ❤️", "ORCA ❤️"],
+      "skillLevel": "▰▰▰▰▰▰▱▱▱▱",
+      "quests": ["OOUXing my Portfolio"],
+      "color": "skill-orange",
+      "icon": "tools"
+    },
+    {
+      "category": "Drawing & Painting",
+      "description": "I've been drawing since I can remember. It was always integral to who I am and is one of the first things people learn about me as I like to doodle in meeting (I still pay attention, I swear).",
+      "tools": ["Gouache", "Fine liner", "Poscas", "Water Colors"],
+      "skillLevel": "▰▰▰▰▰▰▰▰▱▱",
+      "quests": [],
       "color": "skill-yellow",
-      "icon": "testing"
+      "icon": "design"
+    },
+    {
+      "category": "Speed Cubing",
+      "description": "I picked up cubing with a rubiks cube (that thing that was popular in the 80s) when I was around 17 just to see if I can do it. Since then I've not been able to put it down again and my collection has grown to around 20. My best time is 32 sec. which is not super fast but I'm still proud of it.",
+      "tools": [],
+      "skillLevel": "▰▰▰▰▰▱▱▱▱▱",
+      "quests": [],
+      "color": "skill-blue",
+      "icon": "mobile"
+    },
+    {
+      "category": "UX Writing",
+      "description": "As someone who is dyslexic I find it important to phrase texts in a clear and easy to understand way, as I know the struggle of overly complicated sentences. This has lead me to put more and more effort and care into the texts I write for interfaces. The impact is easily visible in user tests and always makes me smile.",
+      "tools": ["Notion ❤️", "Figma ❤️", "Miro ❤️", "User Testing"],
+      "skillLevel": "▰▰▰▰▰▰▰▰▱▱",
+      "quests": [
+        "A design system for all teams",
+        "Easy ordering for every diet",
+        "Effortless onboarding with a personalised reward"
+      ],
+      "color": "skill-green",
+      "icon": "frontend"
+    },
+    {
+      "category": "Workshop Facilitation",
+      "description": "I gathered up quite the suitcase of methods over the years if I do say so myself and appreciate a good flow of them, carefully put together to get to an outcome and output under a shared goal. I'm not the loudest person but passion helps me to get people on board either way.",
+      "tools": [
+        "Miro ❤️",
+        "Desk Research",
+        "Benchmark",
+        "Affinity Mapping",
+        "Lightning Demos",
+        "Journey Mapping",
+        "Opportunity decision tree ❤️",
+        "Crazy 8s ❤️",
+        "ORCA ❤️"
+      ],
+      "skillLevel": "▰▰▰▰▰▰▱▱▱▱",
+      "quests": [
+        "Effortless onboarding with a personalised reward",
+        "A filter for every yogi",
+        "Custom lists for self organisation",
+        "Easy ordering for every diet"
+      ],
+      "color": "skill-purple",
+      "icon": "tools"
     }
   ],
   "inventory": [
