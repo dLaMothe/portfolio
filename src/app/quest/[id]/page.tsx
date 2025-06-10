@@ -24,6 +24,12 @@ interface QuestPageProps {
 export default function QuestDetailPage({ params }: QuestPageProps) {
   const questId = params.id;
 
+  // Utility function to handle base path for GitHub Pages
+  const getImageSrc = (path: string) => {
+    const basePath = process.env.NODE_ENV === "production" ? "/portfolio" : "";
+    return `${basePath}${path}`;
+  };
+
   // Quest 1: A design system for all teams
   if (questId === "1") {
     return (
@@ -853,7 +859,9 @@ export default function QuestDetailPage({ params }: QuestPageProps) {
         <div
           className="h-64 bg-cover bg-center relative"
           style={{
-            backgroundImage: `url('/img/filter-header.jpg')`,
+            backgroundImage: `url('${getImageSrc(
+              "/images/quests/filter-header.jpg"
+            )}')`,
             backgroundPosition: "center 63%",
           }}
         >
@@ -1103,7 +1111,7 @@ export default function QuestDetailPage({ params }: QuestPageProps) {
               <div className="bg-gray-50 rounded-lg p-6">
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                   <img
-                    src="/img/filter-before.png"
+                    src={getImageSrc("/images/quests/filter-before.png")}
                     alt="Filter interface before redesign - showing teacher selection and duration filter"
                     className="w-full h-auto"
                   />
@@ -1116,7 +1124,7 @@ export default function QuestDetailPage({ params }: QuestPageProps) {
               <div className="bg-gray-50 rounded-lg p-6">
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                   <img
-                    src="/img/filter-after.png"
+                    src={getImageSrc("/images/quests/filter-after.png")}
                     alt="Filter interface after redesign - showing improved teacher and style selection"
                     className="w-full h-auto"
                   />
@@ -1126,38 +1134,6 @@ export default function QuestDetailPage({ params }: QuestPageProps) {
                   improved navigation
                 </p>
               </div>
-            </div>
-          </div>
-
-          {/* Filter Process Flow */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">
-              Applying the Filter - Process Flow
-            </h2>
-            <div className="bg-gray-50 rounded-lg p-6">
-              <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-                <div className="aspect-[16/10] bg-gray-100 flex items-center justify-center">
-                  <div className="text-center text-gray-600">
-                    <div className="w-16 h-16 mx-auto mb-4 bg-gray-300 rounded-lg flex items-center justify-center">
-                      <span className="text-2xl">🔄</span>
-                    </div>
-                    <h3 className="text-lg font-semibold mb-2">
-                      Filter Application Process
-                    </h3>
-                    <p className="text-sm max-w-md">
-                      Complete flowchart showing the user journey through the
-                      filter system, including decision points, user
-                      interactions, and resulting outcomes.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <p className="text-sm text-gray-600 mt-4">
-                This comprehensive flowchart maps out the entire filter
-                application process, showing how users navigate through
-                different filter options and how the system responds to provide
-                relevant yoga content recommendations.
-              </p>
             </div>
           </div>
 

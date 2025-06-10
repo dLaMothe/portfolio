@@ -17,6 +17,12 @@ export default function AchievementsSection() {
   const [selectedAchievement, setSelectedAchievement] =
     useState<Achievement | null>(null);
 
+  // Utility function to handle base path for GitHub Pages
+  const getImageSrc = (path: string) => {
+    const basePath = process.env.NODE_ENV === "production" ? "/portfolio" : "";
+    return `${basePath}${path}`;
+  };
+
   const getTypeColor = (type: string) => {
     switch (type.toLowerCase()) {
       case "publication":
@@ -65,7 +71,7 @@ export default function AchievementsSection() {
                   <div className="rounded h-28 mb-3 overflow-hidden bg-gray-200 shadow-inner">
                     {achievement.picture ? (
                       <img
-                        src={achievement.picture}
+                        src={getImageSrc(achievement.picture)}
                         alt={achievement.name}
                         className="w-full h-full object-cover"
                       />
@@ -122,7 +128,7 @@ export default function AchievementsSection() {
                   <div className="rounded-lg overflow-hidden bg-gray-200 shadow-lg h-64 md:h-80">
                     {selectedAchievement.picture ? (
                       <img
-                        src={selectedAchievement.picture}
+                        src={getImageSrc(selectedAchievement.picture)}
                         alt={selectedAchievement.name}
                         className="w-full h-full object-cover"
                       />
