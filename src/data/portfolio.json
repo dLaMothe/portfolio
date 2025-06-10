@@ -449,28 +449,39 @@
   ],
   "achievements": [
     {
-      "title": "AWS Certified Developer",
-      "issuer": "Amazon Web Services",
-      "date": "2023",
-      "description": "Cloud development and deployment expertise"
+      "name": "How to use the focus state to improve your TV App",
+      "description": "After my first experience with designing for TV I was surprised and excited about the differences compared to designing for mobile or desktop. Hence I wrote down my learnings which got published under XXX",
+      "type": "publication",
+      "picture": "/img/How_to_use_the_focus_state_to_improve_your_TV_App.jpg",
+      "link": "https://medium.com/design-bootcamp/how-to-use-the-focus-state-to-improve-your-tv-app-7cb399b89e3d"
     },
     {
-      "title": "React Developer Certification",
-      "issuer": "Facebook",
-      "date": "2023",
-      "description": "Advanced React patterns and best practices"
+      "name": "A compass for page layouts",
+      "description": "While working on a design system, we wanted to include not only visual but also navigational guidelines. One of which got published under XXX",
+      "type": "publication",
+      "picture": "/img/A_compass_for_page_layouts.jpg",
+      "link": "https://medium.com/ux-planet/a-compass-for-page-layouts-71231306b67"
     },
     {
-      "title": "UX Design Specialization",
-      "issuer": "Google",
-      "date": "2022",
-      "description": "User-centered design methodology"
+      "name": "Design Sprint Masterclass Certificate",
+      "description": "I am a big fan of the Design Sprint by Jake Knapp even though I like to bend the ruled. But I can do that now with confidence after learning the rules in their masterclass.",
+      "type": "certificate",
+      "picture": "/img/Certificate-Carina_Lea_Meyer.png",
+      "link": ""
     },
     {
-      "title": "Best Innovation Award",
-      "issuer": "Tech Conference 2023",
-      "date": "2023",
-      "description": "Recognition for outstanding project innovation"
+      "name": "Scrum Product Owner Certificate",
+      "description": "Though I never worked as a product owner, this class gave me a good understanding about working in a team with diverse roles.",
+      "type": "certificate",
+      "picture": "/img/01_Carina_Lea_Meyer-ScrumAlliance_CSPO_Certificate.png",
+      "link": ""
+    },
+    {
+      "name": "OOUXer of the Month: May 2025",
+      "description": "While taking the OOUX foundations course I was thrilled that my work for it got recognized and posted about. Though not a flashy achievement it is one I hold dear to my heart.",
+      "type": "shout out",
+      "picture": "/img/OOUXer_of_the_Month__May_2025.jpg",
+      "link": ""
     }
   ],
   "contact": {
