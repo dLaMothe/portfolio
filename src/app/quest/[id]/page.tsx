@@ -2,6 +2,7 @@ import React from "react";
 import { Clock, Users, Target, Lightbulb } from "lucide-react";
 import { notFound } from "next/navigation";
 import BackButton from "./BackButton";
+import portfolioData from "@/data/portfolio.json";
 
 // Generate static params for all quest IDs
 export async function generateStaticParams() {
@@ -23,11 +24,42 @@ interface QuestPageProps {
 
 export default function QuestDetailPage({ params }: QuestPageProps) {
   const questId = params.id;
+  const { quests, skills } = portfolioData;
+
+  // Find the current quest data
+  const currentQuest = quests.find((quest) => quest.id === parseInt(questId));
+  if (!currentQuest) {
+    return notFound();
+  }
 
   // Utility function to handle base path for GitHub Pages
   const getImageSrc = (path: string) => {
     const basePath = process.env.NODE_ENV === "production" ? "/portfolio" : "";
     return `${basePath}${path}`;
+  };
+
+  // Function to get skill tag colors matching the Skills section
+  const getSkillTagColor = (skillName: string) => {
+    const skill = skills.find((skill) => skill.category === skillName);
+    if (skill) {
+      switch (skill.color) {
+        case "skill-blue":
+          return "bg-blue-100 text-blue-800";
+        case "skill-green":
+          return "bg-green-100 text-green-800";
+        case "skill-pink":
+          return "bg-pink-100 text-pink-800";
+        case "skill-purple":
+          return "bg-purple-100 text-purple-800";
+        case "skill-orange":
+          return "bg-orange-100 text-orange-800";
+        case "skill-yellow":
+          return "bg-yellow-100 text-yellow-800";
+        default:
+          return "bg-cyan-100 text-cyan-800";
+      }
+    }
+    return "bg-blue-100 text-blue-800";
   };
 
   // Quest 1: A design system for all teams
@@ -84,16 +116,16 @@ export default function QuestDetailPage({ params }: QuestPageProps) {
                     Applied Skills
                   </p>
                   <div className="flex flex-wrap gap-1 mt-2">
-                    {["UX Design", "User Research", "UX Writing"].map(
-                      (skill, index) => (
-                        <span
-                          key={index}
-                          className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded"
-                        >
-                          {skill}
-                        </span>
-                      )
-                    )}
+                    {currentQuest.appliedSkills.map((skill, index) => (
+                      <span
+                        key={index}
+                        className={`px-2 py-1 text-xs rounded ${getSkillTagColor(
+                          skill
+                        )}`}
+                      >
+                        {skill.split(" | ")[0]}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -105,13 +137,7 @@ export default function QuestDetailPage({ params }: QuestPageProps) {
                 Tools
               </p>
               <div className="flex flex-wrap gap-2">
-                {[
-                  "Benchmark",
-                  "User Interviews",
-                  "Sketch",
-                  "Affinity Mapping",
-                  "Abstract",
-                ].map((tool, index) => (
+                {currentQuest.tools.map((tool, index) => (
                   <span
                     key={index}
                     className="px-3 py-1 text-sm bg-gray-100 text-gray-800 rounded-full"
@@ -361,17 +387,14 @@ export default function QuestDetailPage({ params }: QuestPageProps) {
                     Applied Skills
                   </p>
                   <div className="flex flex-wrap gap-1 mt-2">
-                    {[
-                      "User Research",
-                      "UX Design",
-                      "UX Writing",
-                      "Workshop Facilitation",
-                    ].map((skill, index) => (
+                    {currentQuest.appliedSkills.map((skill, index) => (
                       <span
                         key={index}
-                        className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded"
+                        className={`px-2 py-1 text-xs rounded ${getSkillTagColor(
+                          skill
+                        )}`}
                       >
-                        {skill}
+                        {skill.split(" | ")[0]}
                       </span>
                     ))}
                   </div>
@@ -385,14 +408,7 @@ export default function QuestDetailPage({ params }: QuestPageProps) {
                 Tools
               </p>
               <div className="flex flex-wrap gap-2">
-                {[
-                  "Expert Interviews ❤️",
-                  "HMW",
-                  "Desk Research",
-                  "Lightning Demos",
-                  "User Testing",
-                  "Figma ❤️",
-                ].map((tool, index) => (
+                {currentQuest.tools.map((tool, index) => (
                   <span
                     key={index}
                     className="px-3 py-1 text-sm bg-gray-100 text-gray-800 rounded-full"
@@ -612,17 +628,14 @@ export default function QuestDetailPage({ params }: QuestPageProps) {
                     Applied Skills
                   </p>
                   <div className="flex flex-wrap gap-1 mt-2">
-                    {[
-                      "UX Design",
-                      "User Research",
-                      "Prototyping",
-                      "Workshop Facilitation",
-                    ].map((skill, index) => (
+                    {currentQuest.appliedSkills.map((skill, index) => (
                       <span
                         key={index}
-                        className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded"
+                        className={`px-2 py-1 text-xs rounded ${getSkillTagColor(
+                          skill
+                        )}`}
                       >
-                        {skill}
+                        {skill.split(" | ")[0]}
                       </span>
                     ))}
                   </div>
@@ -636,20 +649,7 @@ export default function QuestDetailPage({ params }: QuestPageProps) {
                 Tools
               </p>
               <div className="flex flex-wrap gap-2">
-                {[
-                  "Figma ❤️",
-                  "User Testing",
-                  "Desk Research",
-                  "Behavioural Psychology",
-                  "Opportunity decision tree ❤️",
-                  "JTBD",
-                  "Wireframing",
-                  "Benchmark",
-                  "User Interviews",
-                  "rapid Usertests",
-                  "Hotjar ❤️",
-                  "Miro ❤️",
-                ].map((tool, index) => (
+                {currentQuest.tools.map((tool, index) => (
                   <span
                     key={index}
                     className="px-3 py-1 text-sm bg-gray-100 text-gray-800 rounded-full"
@@ -908,17 +908,14 @@ export default function QuestDetailPage({ params }: QuestPageProps) {
                     Applied Skills
                   </p>
                   <div className="flex flex-wrap gap-1 mt-2">
-                    {[
-                      "UX Design",
-                      "User Research",
-                      "Prototyping",
-                      "Workshop Facilitation",
-                    ].map((skill, index) => (
+                    {currentQuest.appliedSkills.map((skill, index) => (
                       <span
                         key={index}
-                        className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded"
+                        className={`px-2 py-1 text-xs rounded ${getSkillTagColor(
+                          skill
+                        )}`}
                       >
-                        {skill}
+                        {skill.split(" | ")[0]}
                       </span>
                     ))}
                   </div>
@@ -932,15 +929,7 @@ export default function QuestDetailPage({ params }: QuestPageProps) {
                 Tools
               </p>
               <div className="flex flex-wrap gap-2">
-                {[
-                  "Optimal Workshop ❤️",
-                  "rapid Usertests",
-                  "Figma ❤️",
-                  "Miro ❤️",
-                  "Card Sorting ❤️",
-                  "Tree Testing ❤️",
-                  "Expert Interviews ❤️",
-                ].map((tool, index) => (
+                {currentQuest.tools.map((tool, index) => (
                   <span
                     key={index}
                     className="px-3 py-1 text-sm bg-gray-100 text-gray-800 rounded-full"
@@ -1198,7 +1187,6 @@ export default function QuestDetailPage({ params }: QuestPageProps) {
             <BackButton />
           </div>
         </div>
-
         <div className="max-w-4xl mx-auto px-6 -mt-16 relative z-10">
           {/* Title Card */}
           <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
@@ -1233,12 +1221,14 @@ export default function QuestDetailPage({ params }: QuestPageProps) {
                     Applied Skills
                   </p>
                   <div className="flex flex-wrap gap-1 mt-2">
-                    {["OOUX", "UX Design", "UI Design"].map((skill, index) => (
+                    {currentQuest.appliedSkills.map((skill, index) => (
                       <span
                         key={index}
-                        className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded"
+                        className={`px-2 py-1 text-xs rounded ${getSkillTagColor(
+                          skill
+                        )}`}
                       >
-                        {skill}
+                        {skill.split(" | ")[0]}
                       </span>
                     ))}
                   </div>
@@ -1513,18 +1503,14 @@ export default function QuestDetailPage({ params }: QuestPageProps) {
                   Applied Skills
                 </p>
                 <div className="flex flex-wrap gap-1 mt-2">
-                  {[
-                    "Prototyping",
-                    "User Research",
-                    "UX Design",
-                    "UX Writing",
-                    "Workshop Facilitation",
-                  ].map((skill, index) => (
+                  {currentQuest.appliedSkills.map((skill, index) => (
                     <span
                       key={index}
-                      className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded"
+                      className={`px-2 py-1 text-xs rounded ${getSkillTagColor(
+                        skill
+                      )}`}
                     >
-                      {skill}
+                      {skill.split(" | ")[0]}
                     </span>
                   ))}
                 </div>

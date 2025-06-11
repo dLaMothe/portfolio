@@ -6,7 +6,7 @@ import { Code2, ArrowRight, Clock, Users, Wrench } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export default function QuestsSection() {
-  const { quests } = portfolioData;
+  const { quests, skills } = portfolioData;
   const router = useRouter();
 
   // Restore scroll position when component mounts
@@ -27,18 +27,29 @@ export default function QuestsSection() {
     }
   }, []);
 
-  const getSkillTagColor = (skill: string, index: number) => {
-    const colors = [
-      "bg-blue-500 text-white", // Bold blue
-      "bg-green-500 text-white", // Bright green
-      "bg-purple-500 text-white", // Bold purple
-      "bg-orange-500 text-white", // Vibrant orange
-      "bg-pink-500 text-white", // Hot pink
-      "bg-cyan-500 text-white", // Bright cyan
-      "bg-yellow-500 text-black", // Bright yellow
-      "bg-red-500 text-white", // Bold red
-    ];
-    return colors[index % colors.length];
+  const getSkillTagColor = (skillName: string) => {
+    // Find the skill in the skills data to get its color
+    const skill = skills.find((skill) => skill.category === skillName);
+    if (skill) {
+      switch (skill.color) {
+        case "skill-blue":
+          return "bg-blue-100 text-blue-800 border-blue-200";
+        case "skill-green":
+          return "bg-green-100 text-green-800 border-green-200";
+        case "skill-pink":
+          return "bg-pink-100 text-pink-800 border-pink-200";
+        case "skill-purple":
+          return "bg-purple-100 text-purple-800 border-purple-200";
+        case "skill-orange":
+          return "bg-orange-100 text-orange-800 border-orange-200";
+        case "skill-yellow":
+          return "bg-yellow-100 text-yellow-800 border-yellow-200";
+        default:
+          return "bg-cyan-100 text-cyan-800 border-cyan-200";
+      }
+    }
+    // Default fallback
+    return "bg-blue-100 text-blue-800 border-blue-200";
   };
 
   const handleQuestClick = (questId: number) => {
@@ -113,9 +124,8 @@ export default function QuestsSection() {
                     {quest.appliedSkills.slice(0, 3).map((skill, index) => (
                       <span
                         key={index}
-                        className={`px-2 py-1 text-xs font-bold border-2 border-black ${getSkillTagColor(
-                          skill,
-                          index
+                        className={`px-2 py-1 text-xs font-bold border-2 ${getSkillTagColor(
+                          skill
                         )}`}
                       >
                         {skill.split(" | ")[0]} {/* Show shortened version */}
