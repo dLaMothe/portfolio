@@ -1,6 +1,6 @@
 import React from "react";
 import portfolioData from "@/data/portfolio.json";
-import { Mail, Github, Linkedin } from "lucide-react";
+import { Mail, Linkedin } from "lucide-react";
 
 export default function ContactSection() {
   const { contact } = portfolioData;
@@ -23,17 +23,7 @@ export default function ContactSection() {
           </a>
 
           <a
-            href={`https://github.com/${contact.github}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition-colors"
-          >
-            <Github className="w-4 h-4" />
-            <span className="text-xs">GitHub</span>
-          </a>
-
-          <a
-            href={`https://linkedin.com/in/${contact.linkedin}`}
+            href={contact.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 bg-blue-700 hover:bg-blue-800 px-4 py-2 rounded-lg transition-colors"

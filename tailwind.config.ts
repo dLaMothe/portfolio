@@ -24,12 +24,12 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "hero-gradient": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
-        "quest-1": "linear-gradient(135deg, #d299c2 0%, #fef9d7 100%)",
-        "quest-2": "linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)",
-        "quest-3": "linear-gradient(135deg, #fdbb2d 0%, #22c1c3 100%)",
-        "quest-4": "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)",
-        "quest-5": "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)",
-        "quest-6": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
+        "quest-1": "linear-gradient(135deg, #00bcd4 0%, #3f51b5 100%)",
+        "quest-2": "linear-gradient(135deg, #ffa726 0%, #fb8c00 100%)",
+        "quest-3": "linear-gradient(135deg, #ff8a80 0%, #ff5722 100%)",
+        "quest-4": "linear-gradient(135deg, #81c784 0%, #4caf50 100%)",
+        "quest-5": "linear-gradient(135deg, #9c27b0 0%, #673ab7 100%)",
+        "quest-6": "linear-gradient(135deg, #f8bbd9 0%, #e91e63 100%)",
       },
       colors: {
         "skill-blue": "#4facfe",

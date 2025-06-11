@@ -77,7 +77,7 @@ export default function QuestsSection() {
 
               {/* Large Gradient Area */}
               <div
-                className={`relative h-48 ${quest.gradient} bg-gradient-to-br from-purple-400 via-pink-500 to-red-500 overflow-hidden`}
+                className={`relative h-48 bg-${quest.gradient} overflow-hidden`}
               >
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center text-white">
